@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "UNIT 2 CC.md",
+                "file": "UNIT I CC.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UNIT 2 CC"
+              "title": "UNIT I CC"
             }
           },
           {
@@ -201,8 +201,8 @@
   },
   "active": "6b92c44082aa9b96",
   "lastOpenFiles": [
-    "UNIT 3 CC.md",
     "UNIT 2 CC.md",
+    "UNIT 3 CC.md",
     "UNIT I CC.md",
     "to make notes.md",
     "sql commands learnt so far.md",
