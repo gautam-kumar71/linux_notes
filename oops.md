@@ -97,7 +97,7 @@ Student s1;
 cout<<sizeof(s1); //gives 12 bytes ; a a a a c p p p b b b b 
 }
 
-
+```cpp
 #include<iostream>
 using namespace std;
 class Student
@@ -113,6 +113,8 @@ Student s1;
 cout<<sizeof(s1); //gives 16 bytes ; c c p p b b b b e e e e e e e e  
 }
 
+
+```cpp
 #include<iostream>
 using namespace std;
 class Student
