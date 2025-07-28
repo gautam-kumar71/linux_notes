@@ -170,3 +170,11 @@ cout<<sizeof(s1); //gives 24 bytes ; c p p p b b b b d p p p p p p p e e e e e e
 ---
 
 ### STATIC VS DYNAMIC MEMORY ALLOCATION
+
+#note objects can be created dynamically too. In dynamic memory allocation the objects can take larger space as compared to static memory allocation.
+This can be achieved by pointers. 
+In static memory allocation, it uses stack to allocate memory while in dynamic memory allocation the memory allocation , it uses heap for the memory allocation.
+
+```cpp
+Classname *objName=new Classname;
+(*objName).propertyname=value; 
