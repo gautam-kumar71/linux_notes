@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "oops.md",
+                "file": "Object Oriented Programming (OOP).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "oops"
+              "title": "Object Oriented Programming (OOP)"
             }
           }
         ]
@@ -173,7 +173,7 @@
   "active": "8c9072e5d6d0b4b0",
   "lastOpenFiles": [
     "notes.md",
-    "oops.md",
+    "Object Oriented Programming (OOP).md",
     "Process signals.md",
     "PROJECT.md",
     "things to do.md",
