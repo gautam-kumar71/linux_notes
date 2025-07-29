@@ -466,3 +466,35 @@ int main()
     obj2.display();
 }
 ```
+
+> If i explicitly make the copy constructor then the compiler won't create the default copy constructor. And if i don't use pass by reference , it will throw an error because it will call the copy constructor recursively.
+
+```cpp
+#include<iostream>
+using namespace std;
+class Customer{
+    string name;
+    int accNo;
+    int balance;
+    public:
+    inline Customer(string n,int a,int b):name(n),accNo(a),balance(b){
+    } 
+    Customer(Customer &other)//if Customer(Customer other)--->it will throw error
+    {
+      name=other.name;
+      accNo=other.accNo;
+      balance=other.balance;
+    }
+    //getter function
+    void display(){
+        cout<<name<<endl;
+        cout<<accNo<<endl;
+        cout<<balance<<endl;
+    }
+};
+int main()
+{
+    Customer obj1("Gautam",6184614,9466761);
+    Customer obj2(obj1);
+    obj2.display();
+}```
