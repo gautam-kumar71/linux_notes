@@ -193,8 +193,8 @@ objName->propertyname = value;
 - It is used to initialize the value
 - **All members and constructors** in a class are `private` by default unless specified otherwise.
 - What does this do? This object stores the created object's address
-#note
- **`In C++, once you write an **access specifier** like `public:`, everything **after that** (until another access specifier like `private:` or `protected:`) will be treated with that access level.`
+ #note
+ 💡 **In C++, once you write an _access specifier_ like `public:`, everything after that (until another access specifier like `private:` or `protected:`) will be treated with that access level.**
 ---
 ### 🧪Example 1
 ``` cpp
@@ -220,3 +220,31 @@ int main() {
     return 0;
 }
 ```
+### 🧪Example 2
+```cpp
+#include <iostream>
+using namespace std;
+class Customer{
+    string name;
+    int accNO;
+    int bal;
+    
+    //all members and constructors in a class are by default "private"
+    //so explicitly we have to make it public
+    //Default Constructor
+    public:
+    Customer(){
+        name="aman";
+        accNO=123;
+        bal=654;
+    }
+    
+};
+
+
+int main() {
+    Customer obj;
+    return 0;
+}
+```
+
