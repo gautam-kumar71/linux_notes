@@ -315,7 +315,11 @@ MyClass obj;  // ❌ Error: no matching default constructor
 ```
 
 ### Constructor overloading
-some constructor name but different number of parameters
+
+- All constructors must have **unique parameter types or counts**.
+- The compiler figures out which constructor to call based on the arguments you pass.
+- The compiler uses the **number** and **types** (and **order**) of parameters to distinguish between overloaded constructors.
+
 ```cpp
 #include <iostream>
 using namespace std;
