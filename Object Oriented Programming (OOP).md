@@ -436,4 +436,33 @@ int main()
     obj.display();
 }
 ```
-### Copy constructor
+### Copy Constructor
+>**if you do not define a copy constructor**, the **compiler provides a 
+>default copy constructor**. This constructor performs a **shallow copy**, meaning:
+- It copies each **member variable** from one object to another.
+- The default copy constructor performs a shallow copy.
+  
+```cpp
+#include<iostream>
+using namespace std;
+class Customer{
+    string name;
+    int accNo;
+    int balance;
+    public:
+    inline Customer(string n,int a,int b):name(n),accNo(a),balance(b){
+    } 
+    //getter function
+    void display(){
+        cout<<name<<endl;
+        cout<<accNo<<endl;
+        cout<<balance<<endl;
+    }
+};
+int main()
+{
+    Customer obj1("Gautam",6184614,9466761);
+    Customer obj2(obj1);// Default copy constructor is used
+    obj2.display();
+}
+```
