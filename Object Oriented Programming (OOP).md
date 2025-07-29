@@ -228,22 +228,23 @@ class Customer{
     string name;
     int accNO;
     int bal;
-    
-    //all members and constructors in a class are by default "private"
-    //so explicitly we have to make it public
-    //Default Constructor
+
     public:
     Customer(){
         name="aman";
         accNO=123;
         bal=654;
     }
+    //getter function
+    void getResult()
+    {
+        cout<<name<<endl;
+    }
     
 };
-
-
 int main() {
     Customer obj;
+    obj.getResult();
     return 0;
 }
 ```
