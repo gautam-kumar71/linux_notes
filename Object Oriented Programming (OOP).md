@@ -314,4 +314,52 @@ public:
 MyClass obj;  // ❌ Error: no matching default constructor
 ```
 
+### Constructor overloading
+some constructor name but different number of parameters
+```cpp
+#include <iostream>
+using namespace std;
+class Customer{
+    string name;
+    int accNO;
+    int bal;
+
+    public:
+    Customer(){
+        name="aman";
+        accNO=123;
+        bal=654;
+    }
+    //parameterizd constructor
+    Customer(string n,int a,int b)
+    {
+        name=n;
+        accNO=a;
+        bal=b;
+    }
+    Customer(string n,int a)
+    {
+        name=n;
+        accNO=a;
+    }
+    //getter function
+    void getResult()
+    {
+        cout<<name<<endl;
+        cout<<accNO<<endl;
+        cout<<bal<<endl;
+    }
+};
+
+
+int main() {
+    Customer obj;
+    Customer obj2("Kartik",1234,654);
+    Customer obj3("Tara",34);
+    obj.getResult();
+    obj2.getResult();
+    obj3.getResult();
+    return 0;
+}
+```
 
