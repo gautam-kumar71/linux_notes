@@ -369,4 +369,4 @@ int main() {
 ```
 
 #note 
-> `this` is **only available inside non-static member functions of a class or struct** in C++.
+> `this` is an implicit pointer available inside **non-static member functions** of a class or struct , and it points to the object that invoked the method.
