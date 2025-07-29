@@ -411,3 +411,28 @@ int main() {
     return 0;
 }
 ```
+
+### INLINE CONSTRUCTOR
+```cpp
+#include<iostream>
+using namespace std;
+class Customer{
+    string name;
+    int accNo;
+    int balance;
+    public:
+    inline Customer(string n,int a,int b):name(n),accNo(a),balance(b){
+    } 
+    //getter function
+    void display(){
+        cout<<name<<endl;
+        cout<<accNo<<endl;
+        cout<<balance<<endl;
+    }
+};
+int main()
+{
+    Customer obj("Gautam",6184614,9466761);
+    obj.display();
+}
+```
