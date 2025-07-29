@@ -497,10 +497,14 @@ int main()
     Customer obj1("Gautam",6184614,9466761);
     Customer obj2(obj1);
     obj2.display();
+    //another way of copying
+    Customer obj3;
+    obj3=obj2;
+    obj3.display();
 }```
 #note 
 >If objects are passed by value instead of reference for copying without the default copy constructor present then it will lead to endless recursive calls and no object value will be 
 >copied to other object's value.
 
 
-![[important.jpg]]
+![Diagram](important.jpg)

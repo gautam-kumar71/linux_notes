@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Object Oriented Programming (OOP).md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -74,13 +74,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "523a77c82cf64cd7",
@@ -152,9 +150,19 @@
               "icon": "lucide-list",
               "title": "Outline of day1"
             }
+          },
+          {
+            "id": "40b9442cf3c450a0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -175,8 +183,8 @@
   "active": "8c9072e5d6d0b4b0",
   "lastOpenFiles": [
     "important.jpg",
-    "notes.md",
     "Object Oriented Programming (OOP).md",
+    "notes.md",
     "Process signals.md",
     "PROJECT.md",
     "things to do.md",
