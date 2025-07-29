@@ -372,3 +372,42 @@ int main() {
 > `this` is an implicit pointer available inside **non-static member functions** of a class or struct , and it points to the object that invoked the method.
 
 - It holds the **address** of the object that invoked the member function or the constructor.
+```cpp
+#include <iostream>
+using namespace std;
+class Customer{
+    string name;
+    int accNO;
+    int bal;
+
+    public:
+    // Without 'this', the function uses the constructor parameter instead of the member variable and this causes ambiguity.
+    Customer(string name,int accNO,int bal)
+    {
+        this->name=name;
+        this->accNO=accNO;
+        this->bal=bal;
+    }
+    Customer(string n,int a)
+    {
+        name=n;
+        accNO=a;
+    }
+    //getter function
+    void getResult()
+    {
+        cout<<name<<endl;
+        cout<<accNO<<endl;
+        cout<<bal<<endl;
+    }
+};
+
+
+int main() {
+    Customer obj1("Kartik",1234,654);
+    Customer obj2("Tara",34);
+    obj1.getResult();
+    obj2.getResult();
+    return 0;
+}
+```
