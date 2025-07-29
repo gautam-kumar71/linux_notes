@@ -171,7 +171,9 @@ cout<<sizeof(s1); //gives 24 bytes ; c p p p b b b b d p p p p p p p e e e e e e
 
 ### STATIC VS DYNAMIC MEMORY ALLOCATION
 
-**#Note:** Objects can be created dynamically too.  
+**#Note:** 
+> Objects can be created dynamically too.  
+
 In **dynamic memory allocation**, objects can take more space compared to static memory allocation.  
 This is achieved using **pointers**.
 - **Static memory allocation** uses the **stack**.
@@ -194,7 +196,7 @@ objName->propertyname = value;
 - **All members and constructors** in a class are `private` by default unless specified otherwise.
 - What does this do? This object stores the created object's address
  #note
- 💡 **In C++, once you write an _access specifier_ like `public:`, everything after that (until another access specifier like `private:` or `protected:`) will be treated with that access level.**
+ >💡 **In C++, once you write an _access specifier_ like `public:`, everything after that (until another access specifier like `private:` or `protected:`) will be treated with that access level.**
 ---
 ### 🧪Example 1
 ``` cpp
@@ -289,3 +291,27 @@ int main() {
     return 0;
 }
 ```
+
+#note 
+
+> “If you declare a constructor yourself, then the compiler won't generate a default constructor.”
+---
+> ❗ **Note:** If you define any constructor yourself (e.g., a parameterized one), the **compiler will not automatically generate a default constructor**.  
+> You must explicitly define the default constructor if you need one.
+
+---
+### Example:
+
+```cpp
+class MyClass {
+public:
+    MyClass(int x) { }  // Custom constructor
+
+    // Now this won't work unless you add:
+    // MyClass() {}  // Manually define default constructor
+};
+
+MyClass obj;  // ❌ Error: no matching default constructor
+```
+
+
