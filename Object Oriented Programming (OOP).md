@@ -315,6 +315,7 @@ MyClass obj;  // ❌ Error: no matching default constructor
 ```
 
 ### Constructor overloading
+**Constructor overloading** in C++ is the ability to define **multiple constructors** in the same class, with the **same name** (the class name), but with **different numbers or types of parameters**.
 
 - All constructors must have **unique parameter types or counts**.
 - The compiler figures out which constructor to call based on the arguments you pass.
