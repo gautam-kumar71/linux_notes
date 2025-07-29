@@ -368,3 +368,5 @@ int main() {
 }
 ```
 
+#note 
+> `this` is **only available inside non-static member functions of a class or struct** in C++.
