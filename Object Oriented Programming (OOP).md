@@ -192,3 +192,4 @@ objName->propertyname = value;
 - It doesn't have any return type
 - It is used to initialize the value
 - **All members and constructors** in a class are `private` by default unless specified otherwise.
+- What does this do? This object stores the created object's address
