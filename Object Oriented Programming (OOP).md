@@ -498,3 +498,5 @@ int main()
     Customer obj2(obj1);
     obj2.display();
 }```
+#note 
+>If objects are passed by value instead of reference for copying without the default copy constructor present then it will lead to endless recursive calls and no object value will be copied to other object's value
