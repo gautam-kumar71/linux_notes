@@ -370,3 +370,9 @@ int main() {
 
 #note 
 > `this` is an implicit pointer available inside **non-static member functions** of a class or struct , and it points to the object that invoked the method.
+
+- It holds the **address** of the object on which the function (constructor or method) is being called.
+    
+- Inside a constructor, `this` refers to the object that is being **constructed**.
+    
+- Inside a member function, it refers to the object that **called** the function.
