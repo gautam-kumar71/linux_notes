@@ -191,3 +191,4 @@ objName->propertyname = value;
 - Name of the constructor should be same as the class name
 - It doesn't have any return type
 - It is used to initialize the value
+- **All members and constructors** in a class are `private` by default unless specified otherwise.
