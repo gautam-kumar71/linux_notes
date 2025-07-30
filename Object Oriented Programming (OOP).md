@@ -567,3 +567,47 @@ int main()
 
 
 ![Diagram](important.jpg)
+
+#note 
+> Here's a catch:
+> If you are trying to create a copy of an object like this:
+> `classname Newobjectname;
+> Newobjectname=previousobjectname;`
+> In this case, it will throw error if there isn't any default constructor
+
+```cpp
+#include<iostream>
+using namespace std;
+class Blueprint{
+  string sky;
+  int key;
+  string water;
+  public:
+   //Blueprint(){};//default Constructor
+   inline Blueprint(){}
+  //inline Blueprint():{} //can't declare like this ; //default constructor
+  //initializer list can't be empty
+  inline Blueprint(string sky,int key, string water):sky(sky),
+   key(key),water(water){
+   }
+   //defining copy constructor
+   Blueprint(Blueprint & originalobj){
+	   sky=originalobj.sky;
+	   key=originalobj.key;
+	   water=originalobj.water;
+   }
+   void display()
+   {
+       cout<<sky<<" "<<key<<" "<<water<<endl;
+   }
+};
+
+int main()
+{
+    Blueprint blue("blue",99,"green");
+    Blueprint objBlue(blue);
+    blue.display();   
+    Blueprint objCopy;
+    objCopy=blue;
+    objCopy.display();
+}```
