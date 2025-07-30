@@ -436,6 +436,65 @@ int main()
     obj.display();
 }
 ```
+
+---
+### 📝 **C++ Constructor Initializer List vs `this->` Usage**
+
+#### ✅ **Correct Syntax for Member Initializer List**
+
+```cpp
+class Blueprint {
+    string sky;
+    int key;
+    string water;
+public:
+    inline Blueprint(string sky, int key, string water)
+        : sky(sky), key(key), water(water) {} // ✅
+};
+```
+
+#### ❌ **Incorrect Syntax Using `this->`**
+
+```cpp
+inline Blueprint(string sky, int key, string water)
+    : this->sky(sky), this->key(key), this->water(water) {} // ❌ Error
+```
+
+- **Error**: `this->` is **not allowed** in initializer lists.
+    
+- The initializer list automatically assumes the left-hand side refers to class members.
+    
+
+---
+
+### 🔍 **Why It Works Without `this->`**
+
+In this syntax:
+
+```cpp
+: sky(sky)
+```
+
+- **Left `sky`** refers to the class member
+    
+- **Right `sky`** refers to the constructor parameter
+    
+
+So the compiler assigns the constructor parameter to the member variable.
+
+---
+
+### ⚠️ **Ambiguity Inside Constructor Body**
+
+```cpp
+Blueprint(string sky, int key, string water) {
+    sky = sky;         // ❌ Ambiguous, both refer to parameter
+    this->sky = sky;   // ✅ Correct way to assign parameter to member inside body
+}
+```
+
+---
+
 ### Copy Constructor
 >**if you do not define a copy constructor**, the **compiler provides a 
 >default copy constructor**. This constructor performs a **shallow copy**, meaning:
