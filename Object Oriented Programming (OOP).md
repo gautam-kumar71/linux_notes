@@ -571,8 +571,10 @@ int main()
 #note 
 > Here's a catch:
 > If you are trying to create a copy of an object like this:
-> `classname Newobjectname;
-> Newobjectname=previousobjectname;`
+> `classname Newobjectname;`
+> `NewObjectName=PreviousObjectName;`
+> and not like this:
+> `Blueprint objBlue(blue);`
 > In this case, it will throw error if there isn't any default constructor
 
 ```cpp
@@ -591,7 +593,7 @@ class Blueprint{
    key(key),water(water){
    }
    //defining copy constructor
-   Blueprint(Blueprint & originalobj){
+   Blueprint(Blueprint &originalobj){
 	   sky=originalobj.sky;
 	   key=originalobj.key;
 	   water=originalobj.water;
@@ -607,7 +609,7 @@ int main()
     Blueprint blue("blue",99,"green");
     Blueprint objBlue(blue);
     blue.display();   
-    Blueprint objCopy;
+    Blueprint objCopy;// mainly throws an error if there isn't any default constructor
     objCopy=blue;
     objCopy.display();
 }```
