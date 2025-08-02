@@ -194,7 +194,7 @@ objName->propertyname = value;
 - It doesn't have any return type
 - It is used to initialize the value
 - **All members and constructors** in a class are `private` by default unless specified otherwise.
-- What does this do? This object stores the created object's address
+- What does "this" do? "This" object stores the created object's address
  #note
  >💡 **In C++, once you write an _access specifier_ like `public:`, everything after that (until another access specifier like `private:` or `protected:`) will be treated with that access level.**
 ---
