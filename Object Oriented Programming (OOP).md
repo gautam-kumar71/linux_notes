@@ -617,7 +617,9 @@ int main()
 }
 ```
 
-### Destructor
+## Destructor
+- Has **no return type**
+- Has **no parameters**
 - It is an instance member function that is invoked automatically whenever an object is going to be destroyed
 - It is the last function that is going to be called before an object is destroyed.
 -  **You can only define **one** destructor per class**
@@ -648,25 +650,7 @@ Customer A1("1"),A2("2"),A3("3");
 }
 ```
 
-  Destructor:
-- Has **no return type**
-- Has **no parameters**
-  Its job is to:
-1. **Clean up resources** that the object used during its lifetime.
-    
-2. That includes:
-    
-    - Dynamically allocated memory (`new`)
-        
-    - Open file handles
-        
-    - Network connections
-        
-    - Locks, mutexes
-        
-    - Database connections
-        
-    - And anything else that needs cleanup
+  
 ```cpp
 #include<iostream>
 using namespace std;
@@ -710,3 +694,20 @@ int main()
 3. Then **base class destructors** (if any)
     
 4. Then the **object's memory is released**
+
+**Its job is to**:
+1. **Clean up resources** that the object used during its lifetime.
+    
+2. That includes:
+    
+    - Dynamically allocated memory (`new`)
+        
+    - Open file handles
+        
+    - Network connections
+        
+    - Locks, mutexes
+        
+    - Database connections
+        
+    - And anything else that needs cleanup
