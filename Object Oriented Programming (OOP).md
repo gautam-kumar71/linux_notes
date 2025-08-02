@@ -613,3 +613,5 @@ int main()
     objCopy=blue;
     objCopy.display();
 }```
+
+### Destructor
