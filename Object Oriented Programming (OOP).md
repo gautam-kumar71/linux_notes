@@ -621,7 +621,7 @@ int main()
 
 - It is an instance member function that is invoked automatically whenever an object is going to be destroyed
 - It is the last function that is going to be called before an object is destroyed.
-- It is created single time only, if you have explicitly created a destructor than the compiler won't create it
+- 
 - Destructor  removes dynamically alloted memory(doesn't removes the object)
   Its job is to:
 1. **Clean up resources** that the object used during its lifetime.
@@ -671,10 +671,21 @@ int main()
     
 - Has **no parameters**
     
-- Each class can have **only one** destructor(can't overload a destructor like constructor)
+- Each class can have **only one** custom destructor(can't overload a destructor like constructor)
 - 
 eg:
 ```cpp
    ~MyClass();         // ✅ Allowed
    ~MyClass(int x);    // ❌ Error: Destructor cannot be overloaded
 ```
+>## ⚙️ **Destructor Execution Order**
+
+### 🔄 When an object is destroyed:
+
+1. Your class’s **destructor** (`~YourClass`) is called
+    
+2. Then **member objects’ destructors** are called (like `std::string`)
+    
+3. Then **base class destructors** (if any)
+    
+4. Then the **object's memory is released**
