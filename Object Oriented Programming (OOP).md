@@ -738,7 +738,7 @@ class Customer{
 int main(){
 Customer A1("1"),A2("2"),A3("3");
 Customer *A4=new Customer();
-delete A4;
+delete A4;//explicitly delete the A4 pointer to a heap
 }
 ```
 
