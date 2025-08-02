@@ -664,3 +664,5 @@ int main()
   Customer A1;
 }
 ```
+#note 
+>constructor is called orderwise but destructor is called reverse wise
