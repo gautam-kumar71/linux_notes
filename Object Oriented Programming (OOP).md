@@ -639,4 +639,28 @@ int main()
     - Database connections
         
     - And anything else that needs cleanup
-
+```cpp
+#include<iostream>
+using namespace std;
+class Customer{
+   string name;
+   int *data;
+   public:
+    Customer()
+    {
+      name="Gautam";
+	  data=new int;
+	  *data=10;
+	  cout<<"successfully the constructor has been created"<<endl;
+    }
+    ~Customer()
+    {
+      delete data;
+	  cout<<"destructor is called"<<endl;
+    }
+};
+int main()
+{
+  Customer A1;
+}
+```
