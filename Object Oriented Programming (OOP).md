@@ -568,6 +568,7 @@ int main()
 
 ![Diagram](important.jpg)
 
+
 #note 
 > Here's a catch:
 > If you are trying to create a copy of an object like this:
@@ -576,6 +577,7 @@ int main()
 > and not like this:
 > `Blueprint objBlue(blue);`
 > In this case, it will throw error if there isn't any default constructor
+
 
 ```cpp
 #include<iostream>
@@ -612,10 +614,28 @@ int main()
     Blueprint objCopy;// mainly throws an error if there isn't any default constructor
     objCopy=blue;
     objCopy.display();
-}```
+}
+```
 
 ### Destructor
 
 - It is an instance member function that is invoked automatically whenever an object is going to be destroyed
 - It is the last function that is going to be called before an object is destroyed.
-- Destructor sirf dynamically alloted memory ko remove karta hai
+- Destructor  removes dynamically alloted memory(doesn't removes the object)
+  Its job is to:
+1. **Clean up resources** that the object used during its lifetime.
+    
+2. That includes:
+    
+    - Dynamically allocated memory (`new`)
+        
+    - Open file handles
+        
+    - Network connections
+        
+    - Locks, mutexes
+        
+    - Database connections
+        
+    - And anything else that needs cleanup
+
