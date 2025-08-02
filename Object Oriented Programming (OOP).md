@@ -657,7 +657,7 @@ class Customer{
     }
     ~Customer()
     {
-      delete data;
+      delete data;//delete name does'nt work because it isn't dynamically alloted
 	  cout<<"destructor is called"<<endl;
     }
 };
