@@ -621,7 +621,10 @@ int main()
 
 - It is an instance member function that is invoked automatically whenever an object is going to be destroyed
 - It is the last function that is going to be called before an object is destroyed.
-- 
+-  **You can only define **one** destructor per class**
+   It looks like: `~Customer() { ... }`
+   But...other destructors (member objects, base classes) are always involved
+   You don't write them, but the compiler will still call them **automatically**, **after** your destructor runs.
 - Destructor  removes dynamically alloted memory(doesn't removes the object)
   Its job is to:
 1. **Clean up resources** that the object used during its lifetime.
