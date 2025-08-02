@@ -615,3 +615,7 @@ int main()
 }```
 
 ### Destructor
+
+- It is an instance member function that is invoked automatically whenever an object is going to be destroyed
+- It is the last function that is going to be called before an object is destroyed.
+- Destructor sirf dynamically alloted memory ko remove karta hai
