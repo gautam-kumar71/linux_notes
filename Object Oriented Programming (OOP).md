@@ -672,8 +672,9 @@ int main()
 - Has **no parameters**
     
 - Each class can have **only one** destructor(can't overload a destructor like constructor)
-- ```cpp
+- 
 eg:
+```cpp
    ~MyClass();         // ✅ Allowed
    ~MyClass(int x);    // ❌ Error: Destructor cannot be overloaded
 ```
