@@ -666,3 +666,14 @@ int main()
 ```
 #note 
 >constructor is called orderwise but destructor is called reverse wise
+>Destructor:
+- Has **no return type**
+    
+- Has **no parameters**
+    
+- Each class can have **only one** destructor(can't overload a destructor like constructor)
+- ```cpp
+eg:
+   ~MyClass();         // ✅ Allowed
+   ~MyClass(int x);    // ❌ Error: Destructor cannot be overloaded
+```
