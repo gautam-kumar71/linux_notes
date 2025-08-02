@@ -711,3 +711,43 @@ int main()
     - Database connections
         
     - And anything else that needs cleanup
+
+```cpp
+#include<iostream>
+using namespace std;
+class Customer{
+ string name;
+ int *data;
+ public:
+ //default constructor
+ Customer()
+ {
+	 name="4";
+	 cout<<"From the newly created constructor:"<<name<<endl;
+ }
+ Customer(string name)
+  {
+     this->name=name;
+     cout<<"From constructor section:"<<name<<endl;
+  }
+  ~Customer()
+  {
+      cout<<"Destructor is being called:"<<name<<endl;
+  }
+};
+int main(){
+Customer A1("1"),A2("2"),A3("3");
+Customer *A4=new Customer();
+delete A4;
+}
+```
+
+### 💣 If You Skip `delete A4`:
+
+If you remove or comment out `delete A4;`, the destructor **won’t be called automatically**, because:
+
+- `A4` is a pointer to an object on the **heap**.
+    
+- Objects created with `new` **must be deleted manually**.
+    
+- Otherwise, the memory remains allocated (→ **memory leak**) and the destructor is **never called**.
