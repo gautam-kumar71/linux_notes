@@ -618,7 +618,6 @@ int main()
 ```
 
 ### Destructor
-
 - It is an instance member function that is invoked automatically whenever an object is going to be destroyed
 - It is the last function that is going to be called before an object is destroyed.
 -  **You can only define **one** destructor per class**
