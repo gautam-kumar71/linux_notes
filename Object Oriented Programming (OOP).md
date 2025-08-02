@@ -624,7 +624,33 @@ int main()
    It looks like: `~Customer() { ... }`
    But...other destructors (member objects, base classes) are always involved
    You don't write them, but the compiler will still call them **automatically**, **after** your destructor runs.
-- Destructor  removes dynamically alloted memory(doesn't removes the object)
+- Destructor  removes dynamically alloted memory(doesn't removes the object).
+>Constructor is called orderwise but destructor is called reverse wise.
+```cpp
+#include<iostream>
+using namespace std;
+class Customer{
+ string name;
+ int *data;
+ public:
+  Customer(string name)
+  {
+     this->name=name;
+     cout<<"From constructor section:"<<name<<endl;
+  }
+  ~Customer()
+  {
+      cout<<"Destructor is being called:"<<name<<endl;
+  }
+};
+int main(){
+Customer A1("1"),A2("2"),A3("3");
+}
+```
+
+  Destructor:
+- Has **no return type**
+- Has **no parameters**
   Its job is to:
 1. **Clean up resources** that the object used during its lifetime.
     
@@ -667,19 +693,13 @@ int main()
 }
 ```
 #note 
->constructor is called orderwise but destructor is called reverse wise
->Destructor:
-- Has **no return type**
-    
-- Has **no parameters**
-    
 - Each class can have **only one** custom destructor(can't overload a destructor like constructor)
 - eg:
 ```cpp
    ~MyClass();         // ✅ Allowed
    ~MyClass(int x);    // ❌ Error: Destructor cannot be overloaded
 ```
->## ⚙️ **Destructor Execution Order**
+## ⚙️ **Destructor Execution Order**
 
 ### 🔄 When an object is destroyed:
 
