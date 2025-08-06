@@ -751,3 +751,14 @@ If you remove or comment out `delete A4;`, the destructor **won’t be called au
 - Objects created with `new` **must be deleted manually**.
     
 - Otherwise, the memory remains allocated (→ **memory leak**) and the destructor is **never called**.
+
+#note:
+Why destructors are called in reverse order?
+- Because the earlier objects might be dependent on next objects , so it is safe to delete the last ones first
+
+## Static Data Member
+
+- They are attribute of classes or class member.  
+- It is declared using static keyword .
+- Only one copy of that member is created for the entire class & is shared by all the object. 
+- It is initialized before any object of this class is created.
