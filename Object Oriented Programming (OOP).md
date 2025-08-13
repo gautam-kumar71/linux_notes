@@ -560,7 +560,12 @@ int main()
     Customer obj3;
     obj3=obj2;
     obj3.display();
-}```
+}
+```
+
+
+
+---
 #note 
 >If objects are passed by value instead of reference for copying without the default copy constructor present then it will lead to endless recursive calls and no object value will be 
 >copied to other object's value.
@@ -626,7 +631,6 @@ int main()
    It looks like: `~Customer() { ... }`
    But...other destructors (member objects, base classes) are always involved
    You don't write them, but the compiler will still call them **automatically**, **after** your destructor runs.
-- Destructor  removes dynamically alloted memory(doesn't removes the object).
 >Constructor is called orderwise but destructor is called reverse wise.
 ```cpp
 #include<iostream>
@@ -696,7 +700,7 @@ int main()
 4. Then the **object's memory is released**
 
 **Its job is to**:
-1. **Clean up resources** that the object used during its lifetime.
+1. **Clean up resources** that the object used during its lifetime. It doesn't remove the object.
     
 2. That includes:
     
@@ -762,3 +766,46 @@ Why destructors are called in reverse order?
 - It is declared using static keyword .
 - Only one copy of that member is created for the entire class & is shared by all the object. 
 - It is initialized before any object of this class is created.
+
+```cpp
+#include<iostream>
+using namespace std;
+class Accounts{
+   string name;
+    int acNo;
+    int age;
+    public:
+    static int totalCustomers;
+public:
+    inline Accounts(string n,int a, int ag):name(n),acNo(a),age(ag){totalCustomers++;}
+    void display()
+    {
+	cout<<name<<endl;
+    cout<<acNo<<endl;
+	cout<<age<<endl;
+	cout<<totalCustomers<<endl;
+    }
+};
+int Accounts::totalCustomers=0;
+int main()
+{
+    Accounts a1("Gautam",69664616,22);
+    a1.display();
+    Accounts a2("Gautam",69664616,22);
+    a2.display();
+    Accounts a3("Gautam",69664616,22);
+    a3.display();
+    Accounts a4("Gautam",69664616,22);
+    a4.display();
+    Accounts a5("Gautam",69664616,22);
+    a5.display();
+    Accounts a6("Gautam",69664616,22);
+    a6.display();
+    Accounts a7("Gautam",69664616,22);
+    a7.display();
+    Accounts::totalCustomers=10;//to access directly without creating any object
+    a7.display();
+}
+```
+
+
