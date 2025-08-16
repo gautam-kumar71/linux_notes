@@ -989,3 +989,57 @@ In the above code we don't need to know exactly how this codebase is handling wi
 ![[diagram2.png]]
 
 ![[diagram3.png]]
+
+```cpp
+#include<iostream>
+using namespace std;
+class Human{
+   public:
+     string name;
+     int age;
+};
+
+//defining a child class
+//Syntax:
+//class childClassName:accessSpecifier ParentClassName
+class Student1:public Human{
+    public:
+    int rollNumber;
+};
+class Student2:protected Human{
+   char bloodGroup;
+   public:
+    void setName(string name)
+    {
+        this->name=name;
+    }
+    void display()
+    {
+        cout<<"Name is accessible in the derived class:"<<name<<endl;
+    }
+};
+class Student3:private Human{
+    int phNo;
+};
+int main()
+{
+    //obj1
+    Student1 s1;
+    s1.rollNumber=12;
+    cout<<s1.rollNumber<<endl;
+  
+    //obj2
+    Student2 s2;
+    // s2.bloodGroup='b';//can't be accessed 
+    // s2.name="Gautam";//can't be accessed because it's protected now
+    s2.setName("Gautam");
+    s2.display();
+    
+    //obj3
+    Student3 s3;
+    // s3.bloodGroup='b';//can't be accessed because it's private now
+    
+}
+```
+# Types of Inheritance
+
