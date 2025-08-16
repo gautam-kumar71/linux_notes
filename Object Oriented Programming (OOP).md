@@ -817,3 +817,172 @@ int main()
    classname::staticFunctionName();
 ```
 
+# Static Member Function example
+```cpp
+#include<iostream>
+using namespace std;
+class Accounts{
+   string name;
+    int acNo;
+    int balance;
+    static int totalCustomers;
+    static int totalBalance;
+    public:
+    inline Accounts(string n,int a, int b):name(n),acNo(a),balance(b)
+    {
+	totalBalance+=balance;
+	totalCustomers++;
+    }
+    void deposit(int amount)
+    {
+	if(amount>0)
+	{
+	 balance+=amount;
+	 totalBalance+=amount;
+      }
+    }
+
+    void withdraw(int amount)
+    {
+	if(amount>0&&balance>=amount)
+         {
+     	   balance-=amount; 
+	   totalBalance-=amount;
+         }
+    }
+    void display()
+    {
+	cout<<"Name="<<name<<endl;
+        cout<<"Account no="<<acNo<<endl;
+        cout<<"balance="<<balance<<endl;
+	cout<<"totalBalance="<<totalBalance<<endl;
+	cout<<"totalCustomers="<<totalCustomers<<endl;
+    }
+    //static member function
+    //can access only static variables even if it's private
+    static void acceStatic()
+     {
+       cout<<totalCustomers<<endl;
+     }
+};
+int Accounts::totalCustomers=0;
+int Accounts::totalBalance=0;
+int main()
+{
+    Accounts a1("Gautam",69664616,2000);  
+    Accounts a2("Gautam",69664616,1200);
+    Accounts a3("Gautam",69664616,4200);
+    a3.deposit(600);
+    a3.withdraw(7000);
+    a3.display();
+    Accounts::acceStatic();
+}
+```
+
+#note: homework - const keyword
+# Encapsulation
+
+- Wrapping up of data and functions into a single unit while controlling access to them.
+- Functions and variables are encapsulated together in a single capsule (class).
+- Variables are usually declared **private**, and functions are usually declared **public**.
+- It enables **data hiding** and provides controlled access through methods.
+- The primary goal of encapsulation is to avoid the data to be accessed directly so that the user doesn't end up in changing the values of the variables directly.
+ 
+ #Example  
+  If the variable `age` is declared **public**, it can be accessed and modified directly. Suppose a user sets the value of `age` to **-5**, which is not valid since age should always be positive. Because the variable is public, such invalid values can be assigned, leading to faulty or inconsistent data.  
+  To prevent this, the variable is declared **private**, and member functions (getters and setters) are created to validate the input. For instance, the setter function can check whether the new value of `age` is positive before applying the change.
+
+ 👉 This makes it clear how **encapsulation enables data hiding and validation**.
+
+```cpp
+#include<iostream>
+using namespace std;
+class Accounts{
+   public: ❌❌❌//shouldn't be declared public here
+    string name;
+    int acNo;
+    int balance;
+    static int totalCustomers;
+    static int totalBalance;
+    public:
+    inline Accounts(string n,int a, int b):name(n),acNo(a),balance(b)
+    {
+      if(balance<0)
+      throw invalid_argument("Balance Can't be negative");
+	  totalBalance+=balance;
+	  totalCustomers++;
+    }
+    void deposit(int amount)
+    {
+	if(amount>0)
+	 {
+	   balance+=amount;
+	   totalBalance+=amount;
+     }
+    }
+
+    void withdraw(int amount)
+    {
+	if(amount>0&&balance>=amount)
+         {
+     	   balance-=amount; 
+	       totalBalance-=amount;
+         }
+    }
+    void display()
+    {
+	cout<<"Name="<<name<<endl;
+    cout<<"Account no="<<acNo<<endl;
+    cout<<"balance="<<balance<<endl;
+	cout<<"totalBalance="<<totalBalance<<endl;
+	cout<<"totalCustomers="<<totalCustomers<<endl;
+    }
+    //static member function
+    //can access only static variables even if it's private
+    static void acceStatic()
+     {
+       cout<<totalCustomers<<endl;
+     }
+};
+int Accounts::totalCustomers=0;
+int Accounts::totalBalance=0;
+int main()
+{
+    Accounts a1("Gautam",69664616,2000);//Here,it works fine,bcz balance is +ve
+    a1.balance=-10;❌❌❌ //can be changed directly,should be strictly avoided
+    a1.display();
+    Accounts::acceStatic();
+}
+```
+
+# Abstraction
+- Displaying only the essential information and hiding the details.
+#Example:
+Suppose a person wants to ride a bike. They do not need to know about the internal workings of the bike; they can simply focus on riding it. This is abstraction.
+
+#Example2:
+In the above code we don't need to know exactly how this codebase is handling withdraw function.
+
+# Inheritance
+
+- The capability of a class to derive properties and characteristics from another class is called **Inheritance**.
+- The class from which properties are derived is called the **base class (or parent class)**, and the class that derives these properties is called the **derived class (or child class)**.
+
+| Access Specifier | External Code | Within Class | Derived Class |
+|------------------|---------------|--------------|---------------|
+| Public           | ✔             | ✔            | ✔             |
+| Protected        | ✘             | ✔            | ✔             |
+| Private          | ✘             | ✔            | ✘             |
+#important
+`Rule of thumb:`
+`private(very strict) > protected(less strict) > public(not strict)`
+
+![[classDiagram.jpg]]
+
+
+
+| Base Class Member Access Specifier | Public Inheritance      | Protected Inheritance   | Private Inheritance     |
+| ---------------------------------- | ----------------------- | ----------------------- | ----------------------- |
+| Public                             | Public                  | Protected               | Private                 |
+| Protected                          | Protected               | Protected               | Private                 |
+| Private                            | Not accessible (Hidden) | Not accessible (Hidden) | Not accessible (Hidden) |
