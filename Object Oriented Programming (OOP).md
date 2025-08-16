@@ -977,12 +977,15 @@ In the above code we don't need to know exactly how this codebase is handling wi
 `Rule of thumb:`
 `private(very strict) > protected(less strict) > public(not strict)`
 
-![[classDiagram.jpg]]
-
-
 
 | Base Class Member Access Specifier | Public Inheritance      | Protected Inheritance   | Private Inheritance     |
 | ---------------------------------- | ----------------------- | ----------------------- | ----------------------- |
 | Public                             | Public                  | Protected               | Private                 |
 | Protected                          | Protected               | Protected               | Private                 |
 | Private                            | Not accessible (Hidden) | Not accessible (Hidden) | Not accessible (Hidden) |
+
+![[diagram1.png]]
+
+![[diagram2.png]]
+
+![[diagram3.png]]
