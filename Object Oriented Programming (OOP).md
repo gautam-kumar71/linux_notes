@@ -808,4 +808,12 @@ int main()
 }
 ```
 
+# Static Member Function
+- It can be accessed without the creation of objects
+- it can only access static variables
+- To access a static function all you need to do is:
+
+```cpp
+   classname::staticFunctionName();
+```
 
