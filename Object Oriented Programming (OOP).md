@@ -631,6 +631,7 @@ int main()
    It looks like: `~Customer() { ... }`
    But...other destructors (member objects, base classes) are always involved
    You don't write them, but the compiler will still call them **automatically**, **after** your destructor runs.
+-  Derived class destructor is called first and then Parent class destructor is called afterwards.(applies to all type of inheritance) 
 >Constructor is called orderwise but destructor is called reverse wise.
 ```cpp
 #include<iostream>
@@ -1227,8 +1228,9 @@ int main()
 
 #### 3. Multiple Inheritance
 - Multiple inheritance occurs when **a derived class inherits from more than one base class**
+- one child has multiple parents.
 
-![[Multilevel-inheritence2 1.webp]]
+![[inheritence3.webp]]
 
 #### **Key Points**
 
@@ -1260,7 +1262,174 @@ int main()
 
 
 ```cpp
+#include<iostream>
+using namespace std;
+
+class Engineer{
+    protected:
+    string spec;
+    
+    public:
+    inline Engineer(){
+        cout<<"Engineer is called first"<<endl;
+    }
+    void work()
+    {
+        cout<<"I have specializtion in : "<<spec<<endl;
+    }
+};
+
+class Youtuber{
+   
+   public:
+   int subscribers;
+   inline Youtuber(){
+        cout<<"Youtuber is called second"<<endl;
+    }
+   void contentCreator()
+   {
+       cout<<"I have a subscriber base of "<<subscribers<<endl;
+   }
+};
+
+class codeTeacher:public Engineer,public Youtuber{
+  public:
+  string name;
+  inline codeTeacher(){
+        cout<<"codeTeacher is called third"<<endl;
+    }
+  codeTeacher(string name,string spec, int subscribers)
+  {
+      this->name=name;
+      this->spec=spec;
+      this->subscribers=subscribers;
+  }
+  void showCase()
+  {
+      cout<<"My name is: "<<name<<endl;
+      work();
+      contentCreator();
+  }
+};
+
+int main()
+{
+    // codeTeacher ct;
+    codeTeacher ct("Gautam","AIML",618461464);
+    ct.showCase();  
+    
+}
 
 ```
 
+### Hierachial Inheritance
 
+- Hierarchical inheritance occurs when **multiple derived classes inherit from the same base class**. 
+- One parent has many children
+
+```cpp
+#include<iostream>
+using namespace std;
+
+class Human{
+    protected:
+     string name;
+     int age;
+    public:
+     Human()
+      {
+        cout<<"Hello Human from the human constructor"<<endl;
+      }
+     Human(string name,int age)
+      {
+        (*this).name=name;
+        this->age=age;
+      }
+
+    void display()
+    {
+        cout<<name<<" "<<age<<endl;
+    }
+    
+    ~Human()
+    {
+        cout<<"Destructor of human is being called "<<endl;
+    }
+};
+
+//Inheriting class (derived class)
+class Student:public Human{
+    int roll_number,fees;
+    public:
+    Student(string name,int age,int roll_number,int fees):Human(name,age)
+    {
+        this->roll_number=roll_number;
+        this->fees=fees;
+    }
+    
+    void display()
+    {
+        cout<<name<<" "<<age<<" "<<roll_number<<" "<<fees<<endl;
+    }
+    
+    ~Student()
+    {
+        cout<<"Destructor of student is being called "<<endl;
+    }
+};
+
+class Teacher:public Human
+{
+    int salary;
+    public:
+    Teacher(int salary,string name,int age)
+    {
+        this->salary=salary;
+        this->name=name;
+        this->age=age;
+    }
+    
+    void display()
+    {
+        cout<<name<<" "<<age<<" "<<salary<<endl;
+    }
+    
+    ~Teacher()
+    {
+        cout<<"Destructor of teacher is being called "<<endl;
+    }
+};
+
+int main()
+{
+   Student s1("Gautam",22,166,77969);
+   s1.display();
+   Teacher t(99,"pinky",28);
+   t.display();
+}
+```
+
+### ⚠️ Key Takeaways:
+- **For Teacher:** default Human() constructor was called → later Teacher destructor + Human destructor executed.
+    
+- **For Student:** parameterized Human(name, age) constructor was called → later Student destructor + Human destructor executed.
+    
+
+---
+
+### ⚠️ Key Learning Points:
+
+1. **If you don’t explicitly call a base constructor in the initializer list, the compiler automatically calls the default constructor of the base.**  
+    (That’s why Teacher used Human()).
+    
+2. **Destructors are called in reverse order:**
+     (this applies to all the types of inheritance)
+    - First derived class destructor
+        
+    - Then base class destructor
+#note 
+Teacher and Student are children of the Human parent class.  
+When a Student object goes out of scope, its destructor is called first, followed by the destructor of the Human class.
+Similarly, when a Teacher object goes out of scope, its destructor is called first, followed by the destructor of its parent class, Human.  
+
+### Hybrid Inheritance
