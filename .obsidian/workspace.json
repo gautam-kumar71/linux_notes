@@ -8,17 +8,13 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8c9072e5d6d0b4b0",
+            "id": "ec9ec1e58c4c1acf",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Object Oriented Programming (OOP).md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Object Oriented Programming (OOP)"
+              "title": "New tab"
             }
           }
         ]
@@ -180,13 +176,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8c9072e5d6d0b4b0",
+  "active": "ec9ec1e58c4c1acf",
   "lastOpenFiles": [
+    "Object Oriented Programming (OOP).md",
+    "Multilevel-inheritence2 1.webp",
+    "Multilevel-inheritence2.webp",
     "diagram1.png",
     "diagram2.png",
     "diagram3.png",
     "classDiagram.jpg",
-    "Object Oriented Programming (OOP).md",
     "projects to  make for offcampus placements.md",
     "timetable.md",
     "PROJECT.md",

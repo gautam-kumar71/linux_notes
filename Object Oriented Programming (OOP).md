@@ -1042,4 +1042,225 @@ int main()
 }
 ```
 # Types of Inheritance
+### 1. Single Inheritance
+  - Single inheritance occurs when **a derived class inherits from only one base class**.
+#### **Key Points**
+
+1. **Constructors:**
+    
+    - Base class constructor is called **first**, then derived class constructor.
+        
+    - Syntax to call parameterized base constructor:
+        
+    
+    `Derived(int x) : Base(x) {}`
+    
+2. **Destructors:**
+    
+    - Derived class destructor is called **first**, then base class destructor.
+        
+    - If using pointers, make **base destructor virtual** for proper cleanup.
+        
+3. **Method Overriding:**
+    
+    - Derived class can **override** base class methods.
+        
+    - If base method is **virtual**, derived method is called through base pointer.
+```cpp
+#include<iostream>
+using namespace std;
+
+//Base class
+class Human{
+    protected:
+     string name;
+     int age;
+    public:
+    void work()
+    {
+     cout<<"I'm working\n"; 
+    }
+    //First the parent class constructor is called and then the child class's          constructor is called
+    Human()
+    {
+        cout<<"Hello Human"<<endl;
+    }
+
+    //constructor for initializing values
+    //This is being called from the child class
+    Human(string name,int age)
+    {
+      (*this).name=name;
+      this->age=age;
+    }
+
+    
+    void display()
+    {
+        cout<<name<<" "<<age<<endl;
+    }
+    
+    ~Human(){
+        cout<<"Destructor of human is being called second"<<endl;
+    }
+};
+
+//Inheriting class (derived class)
+class Student:public Human{
+    int roll_number,fees;
+    public:
+    // Student(string name,int age,int roll_number,int fees)
+    // {
+    //     this->name=name;
+    //     this->age=age;
+    //     this->roll_number=roll_number;
+    //     this->fees=fees;
+    // }
+    
+    Student(string name,int age,int roll_number,int fees):Human(name,age)
+    {
+        this->roll_number=roll_number;
+        this->fees=fees;
+    }
+    
+    
+    // Both the class have the same method name as "display"
+    // Now, between both of the two, the class whose object is being
+    // created will be called first.
+    // Here, student object is being created,so the "display" method
+    // of student will be called
+    
+    void display()
+    {
+        cout<<name<<" "<<age<<" "<<roll_number<<" "<<fees<<endl;
+    }
+    
+    ~Student(){
+        cout<<"Destructor of student is being called first"<<endl;
+    }
+    
+};
+
+int main()
+{
+   Student s1("Gautam",22,166,77969);
+   s1.work();
+   s1.display();
+}
+```
+
+### 2. Multilevel Inheritance
+- Multilevel inheritance occurs when **a class is derived from a derived class**, forming a “chain” of inheritance.
+#### **Key Points**
+1. **Constructor Order:**
+    
+    - Base class constructor → Intermediate derived class constructor → Most derived class constructor.
+        
+2. **Destructor Order:**
+    
+    - Most derived class destructor → Intermediate derived class destructor → Base class destructor.
+        
+3. **Access Specifiers:**
+    
+    - Follows the same rules as single inheritance.
+        
+    - `protected` members of base are accessible in all derived classes.
+        
+    - `private` members of base are **not directly accessible**.
+        
+4. **Method Overriding:**
+    
+    - A derived class can **override** methods of any base class.
+        
+    - Use `virtual` in the base class for proper polymorphic behavior.
+
+![[Multilevel-inheritence2.webp]]
+
+```cpp
+#include<iostream>
+using namespace std;
+
+class Person{
+    protected:
+    string name;
+    
+    public:
+    void introduce()
+    {
+        cout<<"This is me, a person whose name is: "<<name<<endl;
+    }
+};
+
+class Employee:public Person{
+   protected:
+   int salary;
+   
+   public:
+   void monthlySalary()
+   {
+       cout<<"Monthly Salary: "<<salary<<endl;
+   }
+};
+
+class Manager:public Employee{
+  public:
+  string department;
+  Manager(string name,int salary,string department){
+      this->name=name;
+      this->salary=salary;
+      this->department=department;
+  }
+  void work()
+  {
+      cout<<"I am leading the department "<<department<<endl;
+  }
+};
+
+int main()
+{
+    Manager m1("Gautam",246136,"IT");
+    m1.work();  
+    m1.monthlySalary();
+    m1.introduce();
+}
+```
+
+#### 3. Multiple Inheritance
+- Multiple inheritance occurs when **a derived class inherits from more than one base class**
+
+![[Multilevel-inheritence2 1.webp]]
+
+#### **Key Points**
+
+1. **Access Specifiers:**
+    
+    - Public/protected/private rules apply **for each base class individually**.
+        
+    - Private members of a base class are **not directly accessible** in the derived class.
+        
+2. **Constructor Order:**
+    
+    - Base1 constructor → Base2 constructor → Derived class constructor
+        
+3. **Destructor Order:**
+    
+    - Derived destructor → Base2 destructor → Base1 destructor
+        
+4. **Diamond Problem:**
+    
+    - If two base classes inherit from the same class, ambiguity occurs.
+        
+    - Solve using **virtual inheritance**.
+        
+5. **Method Overriding:**
+    
+    - Derived class can override methods from any base class.
+        
+    - If same method exists in multiple base classes, **scope resolution** is needed.
+
+
+```cpp
+
+```
+
 
