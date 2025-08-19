@@ -680,7 +680,10 @@ int main()
 {
   Customer A1;
 }
+
+
 ```
+
 #note 
 - Each class can have **only one** custom destructor(can't overload a destructor like constructor)
 - eg:
