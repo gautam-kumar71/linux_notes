@@ -1436,3 +1436,116 @@ When a Student object goes out of scope, its destructor is called first, followe
 Similarly, when a Teacher object goes out of scope, its destructor is called first, followed by the destructor of its parent class, Human.  
 
 ### Hybrid Inheritance
+
+**Hybrid inheritance** is a **combination of two or more types of inheritance**.  
+It usually mixes:
+- **Hierarchical inheritance** (one base, many children)
+- **Multiple inheritance** (a class inherits from more than one base).
+👉 In C++, hybrid inheritance often leads to the **Diamond Problem** (if two parent classes inherit from the same base class). That’s where **virtual inheritance** comes in.
+
+```cpp
+#include <iostream>
+using namespace std;
+#define e endl
+
+class Student {
+protected:
+    string name;
+    int rollNumber;
+    string gender;
+
+    // defining the student constructor
+    Student(string name, int rollNumber, string gender) {
+        this->name = name;
+        this->rollNumber = rollNumber;
+        this->gender = gender;
+        cout << "Student constructor being called" << e;
+    }
+
+    ~Student() {
+        cout << "Getting called from the student destructor" << e;
+    }
+};
+
+class Male {
+protected:
+    string voice;
+    bool masculinity;
+    string hairs;
+
+public:
+    Male(string voice, bool masculinity, string hairs) {
+        this->voice = voice;
+        this->masculinity = masculinity;
+        this->hairs = hairs;
+        cout << "Male constructor is being called" << e;
+    }
+
+    ~Male() {
+        cout << "Getting called from the male destructor" << e;
+    }
+};
+
+class Female {
+protected:
+    string voice;
+    bool feminity;
+    string hairs;
+
+public:
+    inline Female(string voice, bool feminity, string hairs)
+        : voice(voice), feminity(feminity), hairs(hairs) {
+        cout << "Female constructor is being called" << e;
+    }
+
+    ~Female() {
+        cout << "Getting called from the female destructor" << e;
+    }
+};
+
+class Boy : public Student, public Male {
+protected:
+    string dress;
+
+public:
+    Boy(string name, int roll, string gender,
+        string voice, bool masc, string hairs, string dress)
+        : Student(name, roll, gender), Male(voice, masc, hairs) {
+        this->dress = dress;
+        cout << "Boy constructor called" << e;
+        cout << name << " " << roll << " " << gender << " "
+             << voice << " " << masc << " " << hairs << " "
+             << dress << e;
+    }
+
+    ~Boy() {
+        cout << "Calling the destructor of the Boy " << e;
+    }
+};
+
+class Girl : public Student, public Female {
+protected:
+    string dress;
+
+public:
+    Girl(string name, int roll, string gender,
+         string voice, bool femi, string hairs, string dress)
+        : Student(name, roll, gender), Female(voice, femi, hairs) {
+        this->dress = dress;
+        cout << "Girl constructor being called" << e;
+        cout << name << " " << roll << " " << gender << " "
+             << voice << " " << femi << " " << hairs << " "
+             << dress << e;
+    }
+
+    ~Girl() {
+        cout << "Calling the destructor of the Girl " << e;
+    }
+};
+
+int main() {
+    Boy b1("Gautam", 12, "male", "deep", true, "short", "shirt-pant");
+    Girl g1("Sumitra", 19, "female", "soft-pitched", true, "long","topNskirt");
+}
+```
+
