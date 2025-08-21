@@ -1330,6 +1330,8 @@ int main()
 - Hierarchical inheritance occurs when **multiple derived classes inherit from the same base class**. 
 - One parent has many children
 
+![[hierachicalInheritance.png]]
+
 ```cpp
 #include<iostream>
 using namespace std;
@@ -1443,6 +1445,8 @@ It usually mixes:
 - **Multiple inheritance** (a class inherits from more than one base).
 👉 In C++, hybrid inheritance often leads to the **Diamond Problem** (if two parent classes inherit from the same base class). That’s where **virtual inheritance** comes in.
 
+![[hybridInheritance.png]]
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -1549,3 +1553,64 @@ int main() {
 }
 ```
 
+### Multipath Inheritance
+
+- Multipath inheritance is a type of inheritance in **OOP (Object-Oriented Programming)** where a class is derived from two different classes, and **both parent classes have a common base class**.
+-  **Problem**: Ambiguity (multiple copies of the same base).
+- **Solution**: Use **virtual inheritance** in C++.
+
+![[multiPath.png]]
+
+```cpp
+#include<iostream>
+using namespace std;
+
+class Human{
+    public:
+    string name;
+    void display(){
+        cout<<"My name is :"<<name<<endl;
+    }    
+};
+
+class Engineer:public virtual Human{
+    protected:
+    string spec;
+    
+    public:
+
+    void work()
+    {
+        cout<<"I have specializtion in : "<<spec<<endl;
+    }
+};
+
+class Youtuber:public virtual Human{
+   
+   public:
+   int subscribers;
+   
+   void contentCreator()
+   {
+       cout<<"I have a subscriber base of "<<subscribers<<endl;
+   }
+};
+
+class codeTeacher:public Engineer,public Youtuber{
+  public:
+  int salary;
+  codeTeacher(string name,string spec, int subscribers,int salary)
+  {
+      this->name=name;
+      this->spec=spec;
+      this->subscribers=subscribers;
+      this->salary=salary;
+  }
+  
+};
+
+int main()
+{
+    codeTeacher ct("Gautam","AIML",618461464,99);
+    ct.display();
+}```
