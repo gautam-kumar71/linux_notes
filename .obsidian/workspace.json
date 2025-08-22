@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b7b8274163cd55cf",
+        "id": "359fc65fefd0de1c",
         "type": "tabs",
         "children": [
           {
-            "id": "ec9ec1e58c4c1acf",
+            "id": "273c4edb650f2fbb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Object Oriented Programming (OOP).md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -181,8 +182,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ec9ec1e58c4c1acf",
+  "active": "273c4edb650f2fbb",
   "lastOpenFiles": [
+    "Day10/Important Note.md",
+    "Day10/Exploring File Links in Linux.md",
+    "Untitled.base",
+    "Object Oriented Programming (OOP).md",
     "multiPath.png",
     "hybridInheritance.png",
     "hierachicalInheritance.png",
@@ -192,8 +197,6 @@
     "Day01/File and Dir operations.md",
     "Day14/Secure File Transfer (SFTP) Cheat Sheet.md",
     "Day15/Setting Up SSH Key-Based Authentication.md",
-    "Day10/Exploring File Links in Linux.md",
-    "Object Oriented Programming (OOP).md",
     "Day08/File Compression.md",
     "Day06/Short Notes on File Ownership and Permissions.md",
     "inheritence3.webp",
@@ -207,7 +210,6 @@
     "UNIT 3 CC.md",
     "Day04/📚Linux Man Pages Guide.md",
     "Day02/📂Moving and Organizing Files in Linux.md",
-    "important.jpg",
     "notes.md",
     "Process signals.md",
     "things to do.md",
@@ -227,7 +229,6 @@
     "Day14",
     "Day13",
     "Day12",
-    "Day11",
-    "Day10"
+    "Day11"
   ]
 }

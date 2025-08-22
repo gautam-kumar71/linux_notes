@@ -194,7 +194,20 @@ objName->propertyname = value;
 - It doesn't have any return type
 - It is used to initialize the value
 - **All members and constructors** in a class are `private` by default unless specified otherwise.
-- What does "this" do? "This" object stores the created object's address
+
+#vvi
+### ✅ What `this` really is
+- `this` is an **implicit pointer** that exists inside all non-static member functions.
+- It always points to the **calling object** (the object that invoked the function).
+-  It **does not** point to a newly created object or a result object.
+---
+### ❌ Misconception
+
+> _“`this` object stores the created object’s address.”_  
+> That’s **wrong** because:
+> 
+- `this` only points to the object that the function was called on.
+
  #note
  >💡 **In C++, once you write an _access specifier_ like `public:`, everything after that (until another access specifier like `private:` or `protected:`) will be treated with that access level.**
 ---
@@ -369,7 +382,7 @@ int main() {
 ```
 
 #note 
-> `this` is an implicit pointer available inside **non-static member functions** of a class or struct , and it points to the object that invoked the method.
+> `this` is an implicit pointer available inside **non-static member functions** of a class or struct , and it points to the object that invoked/called the method.
 
 - It holds the **address** of the object that invoked the member function or the constructor.
 ```cpp
@@ -1613,4 +1626,197 @@ int main()
 {
     codeTeacher ct("Gautam","AIML",618461464,99);
     ct.display();
-}```
+}
+```
+
+Good question 👍 Let’s carefully break this down.
+
+It depends **how the inheritance is structured** and **where the method is coming from**.
+
+---
+
+### Case 1: **Two parent classes have same method, child does not override**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    void show() { cout << "A::show()" << endl; }
+};
+
+class B {
+public:
+    void show() { cout << "B::show()" << endl; }
+};
+
+class C : public A, public B { };
+
+int main() {
+    C obj;
+    // obj.show();   // ❌ Ambiguity: compiler doesn’t know A::show() or B::show()
+    obj.A::show();   // ✅ Calls A’s version
+    obj.B::show();   // ✅ Calls B’s version
+}
+```
+
+👉 If **both parents have the same function name**, the child must **disambiguate** (you must specify `A::` or `B::`).  
+It’s **not automatic** — compiler won’t just pick one.
+
+---
+
+### Case 2: **Child overrides the method**
+
+```cpp
+class C : public A, public B {
+public:
+    void show() { cout << "C::show()" << endl; }
+};
+
+int main() {
+    C obj;
+    obj.show();   // ✅ C::show() (child overrides everything)
+}
+```
+
+
+---
+#Question. #DOUBT
+Will look after sometime  after overriding is done then
+But ig if two classes have same method name, and the one which we are creating oject of gets called first right?
+
+✅ **So to answer your doubt:**
+- If **multiple inheritance** → compiler says _ambiguous_, you must specify `Parent::method`.
+- If **single path inheritance** → the **nearest class in hierarchy** wins.
+- If **child overrides** → the child’s method is always used.
+
+### POLYMORPHISM
+
+
+#### Compile Time Polymorphism
+##### 1. Function Overloading
+
+Function overloading is a feature in C++ (and some other languages) that allows you to **have multiple functions with the same name but different parameters** in the same scope. The compiler decides which function to call based on **the number or types of arguments** you pass.
+
+### Key Points:
+
+-  **Same function name**: All the overloaded functions share the same name.
+-  **Different parameters**: The functions must differ in at least one of these:
+    - Number of parameters        
+    - Type of parameters
+    - Order of parameters (if types are different)
+-  **Return type does NOT matter**: You cannot overload a function based only on return type.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Area
+{
+public:
+    // Function to calculate area of a circle
+    double calculateArea(int r)
+    {
+        return 3.14 * r * r;
+    }
+
+    // Function to calculate area of a rectangle
+    int calculateArea(int l, int b)
+    {
+        return l * b;
+    }
+};
+
+int main()
+{
+    Area A1, A2;
+
+    double circleArea = A1.calculateArea(4);
+    int rectangleArea = A2.calculateArea(3, 1);
+
+    cout << "Area of circle with radius 4: " << circleArea << endl;
+    cout << "Area of rectangle 3x1: " << rectangleArea << endl;
+    return 0;
+}
+```
+
+#note:
+
+ -  Even though you changed the return type for the circle version to `double`, it **does not affect  overloading**—overloading depends only on **parameters**, not return type.
+ - Rearranging same parameters with the same signature is still the same. 
+    So, the compiler will treat it as identical function.(either change the type or number of params)
+ 
+ ```cpp
+ int calculateArea(int l, int b)
+   {
+     return l * b;
+   }
+
+ int calculateArea(int b, int l)
+   {
+    return l + b;  
+   }
+```
+--- 
+###  2. Operator Overloading
+Operator overloading is a feature in C++ that allows you to **give special meanings to existing operators** (like `+`, `-`, `*`, `==`, `<<`, etc.) when they are used with **user-defined types**, such as classes or structs.
+
+### Key Points:
+
+1. **Applies to user-defined types** (classes/structs).    
+2. **Syntax:** Use the keyword `operator` followed by the operator symbol.
+3. **Overloadable operators:** Most arithmetic (`+`, `-`, `*`, `/`), relational (`==`, `<`, `>`) and stream operators (`<<`, `>>`).
+4. **Cannot change operator precedence or arity** (number of operands).
+
+```cpp
+#include <iostream>
+#define e endl
+using namespace std;
+class Complex{
+    int real,img;
+    public:
+    inline Complex(){}
+    Complex(int real , int img){
+      this->real=real;
+      this->img=img;
+    }
+    
+    Complex gibberishName(Complex &c)//here c is c2
+    {
+       Complex ans;//basically creating a answer object
+       ans.real=real+c.real;//or ans.real=this->real+c.real;
+       ans.img=img+c.img;
+       return ans;
+    }
+    //fully same thing as above
+    Complex operator +(Complex &c)//here c is c2
+    {
+       Complex ans;
+       //this pointer points to calling object,here the calling object is c1
+       ans.real=this->real+c.real;
+       ans.img=this->img+c.img;
+       return ans;
+    }
+    void display(){
+      cout<<real<<" +i"<<img<<e;
+    }
+};
+
+int main()
+{
+    Complex c1(5,6);
+    Complex c2(7,8);
+    Complex c3=c1.gibberishName(c2);//it is something like c1(c2)
+    Complex c4=c1.operator +(c2);
+    Complex c5=c1+c2; //only works if both are complex objects
+    c3.display();
+    c4.display();
+    c5.display();
+}
+
+```
+
+#Note:
+- `this` does not point to the result (`c3`).
+- `this` only points to the calling object which called the function.(`c1` here) 
