@@ -1693,8 +1693,11 @@ But ig if two classes have same method name, and the one which we are creating o
 
 ### POLYMORPHISM
 
+The word ****polymorphism**** means having many forms. A real-life example of polymorphism is a person who at the same time can have different characteristics.
 
+In C++, polymorphism concept can be applied to functions and operators. A single function can work differently in different situations. Similarly, an operator works different when used in different context.
 #### Compile Time Polymorphism
+Also known as ****early binding**** and ****static polymorphism****, in compile-time polymorphism, the compiler determines how the function or operator will work depending on the context. This type of polymorphism is achieved by function overloading or operator overloading.
 ##### 1. Function Overloading
 
 Function overloading is a feature in C++ (and some other languages) that allows you to **have multiple functions with the same name but different parameters** in the same scope. The compiler decides which function to call based on **the number or types of arguments** you pass.
@@ -1759,7 +1762,7 @@ int main()
    }
 ```
 --- 
-###  2. Operator Overloading
+###  2. _Operator Overloading_
 Operator overloading is a feature in C++ that allows you to **give special meanings to existing operators** (like `+`, `-`, `*`, `==`, `<<`, etc.) when they are used with **user-defined types**, such as classes or structs.
 
 ### Key Points:
@@ -1820,3 +1823,22 @@ int main()
 #Note:
 - `this` does not point to the result (`c3`).
 - `this` only points to the calling object which called the function.(`c1` here) 
+
+### which operator can't be overloaded
+
+1. **Scope resolution operator** `::` 
+2. **Member selection operator** `.`
+3. **Pointer-to-member operator** `.*`
+4. **Ternary (conditional) operator** `?:`
+5. **sizeof** operator
+6. **typeid** operator (from RTTI)
+7. **dot (.) operator for direct member access**
+8. **static_cast, dynamic_cast, const_cast, reinterpret_cast**
+
+# Runtime polymorphism
+
+
+
+
+
+
