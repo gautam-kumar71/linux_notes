@@ -1763,8 +1763,8 @@ int main()
 ```
 --- 
 ###  2. _Operator Overloading_
-Operator overloading is a feature in C++ that allows you to **give special meanings to existing operators** (like `+`, `-`, `*`, `==`, `<<`, etc.) when they are used with **user-defined types**, such as classes or structs.
-
+C++ has the ability to provide the operators with a special meaning for particular data type, this ability is known as [*operator overloading*](https://www.geeksforgeeks.org/cpp/operator-overloading-cpp/). For example, we can make use of the *addition operator (+)* for string to concatenate two *strings* and for *integer* to add two integers. The *<<* and *>> operator* are *binary shift operators* but are also used with *input and output streams*. This is possible due to operator overloading.
+In C++, most operators can be overloaded to work with user-defined types.
 ### Key Points:
 
 1. **Applies to user-defined types** (classes/structs).    
@@ -1837,8 +1837,118 @@ int main()
 
 # Runtime polymorphism
 
+#note:  This is not runtime polymorphism, this is compile time polymorphism
+### Function Hiding (It is not true function overriding)
+### Function Hiding Explained
+
+1. When a derived class declares a method with the **same name** as a method in the base class, **the base class method is hidden** in the scope of the derived class.
+2. **Without `virtual`**, the compiler resolves which function to call **at compile-time**, based on the **type of the object or reference**.
+3. You can still access the hidden base class method explicitly using:
+     `c1.Parent::display();`
+4. If i do something like 
+    `Parent *p=new Child(); //child object creation during runtime` 
+    `p->display()  //it will basically call the parent class's display`
+
+
+```cpp
+#include <iostream>
+using namespace std;
+class Parent{
+    public:
+    void display()
+    {
+       cout<<"here in the parent class"<<endl;
+    }
+};
+
+class Child:public Parent{
+    public:
+    void display()
+    {
+       cout<<"here in the child class"<<endl;
+	Parent::display();//another way to call the Parent class's method
+    }
+};
+
+int main(){
+  Child c1;
+  c1.display();//will call the child class, because the child class will                          override the parent class's display method
+  c1.Parent::display();//will explicitly call the parent class's display method
+  
+  Parent *p = new Child();
+  p->display();//it calls the parent class's display method, not the display 
+               //method of Child class and it is decided in the compile time only
+ 
+ //the thing is that, it is alreay decided in the compile time, as soon as the 
+ //pointer p is created, initially it points to parent class and the Child          object will be allocated to pointer p during runtime. So, in the compiler time is already decided and pointer p points to parent class , so it will print the parent class's display.
+ 
+}
+```
 
 
 
+
+Also known as *late binding* and *dynamic polymorphism*, the function call in [*runtime polymorphism*](https://www.geeksforgeeks.org/cpp/virtual-functions-and-runtime-polymorphism-in-cpp/) is resolved at runtime in contrast with compile time polymorphism, where the compiler determines which function call to bind at compilation. Runtime polymorphism is implemented using function overriding with virtual functions.
+
+### Function overriding 
+
+[*Function Overriding*](https://www.geeksforgeeks.org/cpp/function-overriding-in-cpp/) occurs when a derived class defines one or more member functions of the base class. That base function is said to be *overridden*. The base class function must be declared as [*virtual function*](https://www.geeksforgeeks.org/cpp/virtual-function-cpp/) for runtime polymorphism to happen.
+
+### Conditions:
+
+- The base class function must be `virtual`.
+- The derived class must use the same signature.
+- It's a form of runtime polymorphism (dynamic binding).
+
+The real power of **overriding** comes when you use **a base class pointer or reference pointing to a derived object**:
+
+`Parent* p = new Child(); p->display();  // Calls Child::display() ✅`
+- This is  **runtime polymorphism**
+- Only works if `Parent::display()` is declared `virtual`.
+- If `display()` is not virtual, this will **call the base class version**, not the derived one.
+
+
+
+
+
+
+#verbose_notes
+
+function-defined outside a class
+method -defined inside a class
+
+//method of base class  and derived class and trying to call the method of Base class from the derived class
+```cpp
+void display : A :: display(){}      ///wrong
+
+//: is used to intialize only
+
+void display{
+//something
+A::display() // or objB.A::display()    //right
+}
+```
+
+
+//where A is the base class and `:` is called the `constructor initializer list`
+
+//pure virtual function - suppose multiple methods are there in a specific class  , lets call it as A,B,C,D and if any one of it is declared as pure virtual function , then the whole class will be considered as an abstract and its object will not be created. Abstract serves as a blueprint, like structure , based on it , different objects can inherit the values;
+### 🔹 Rule in C++
+
+If a class **inherits** from a base class that has a **pure virtual function**, then:
+
+1. **If the derived class overrides the pure virtual function:**
+    
+    - ✅ It becomes a concrete class.
+        
+    - ✅ You **can create objects** of this derived class.
+        
+2. **If the derived class does NOT override the pure virtual function:**
+    
+    - ❌ The derived class itself becomes **abstract**.
+        
+    - ❌ You **cannot create objects** of this derived class.
+        
+    - It can still be used as a **base class** for further derivation.
 
 
