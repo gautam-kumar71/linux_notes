@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Revision Tracker.md",
-                "mode": "source",
+                "file": "Day15/HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD).md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Revision Tracker"
+              "title": "HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD)"
             }
           }
         ]
@@ -183,6 +183,13 @@
   },
   "active": "26855fb9ca991bd9",
   "lastOpenFiles": [
+    "Day15/Setting Up SSH Key-Based Authentication.md",
+    "Day15/HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD).md",
+    "Day14/Secure File Transfer (SFTP) Cheat Sheet.md",
+    "Day12/Auth Logs.md",
+    "Day13/Computer Control Commands.md",
+    "Day11/Linux Load Average - Summary.md",
+    "Day09/Understanding the `cp` Command.md",
     "Revision Tracker.md",
     "Untitled 2.base",
     "Untitled 1.base",
@@ -195,10 +202,7 @@
     "hierachicalInheritance.png",
     "projects to  make for offcampus placements.md",
     "PROJECT.md",
-    "Day09/Understanding the `cp` Command.md",
     "Day01/File and Dir operations.md",
-    "Day14/Secure File Transfer (SFTP) Cheat Sheet.md",
-    "Day15/Setting Up SSH Key-Based Authentication.md",
     "Day08/File Compression.md",
     "Day06/Short Notes on File Ownership and Permissions.md",
     "inheritence3.webp",
@@ -218,10 +222,6 @@
     "UNIT I CC.md",
     "UNIT 2 CC.md",
     "to make notes.md",
-    "sql commands learnt so far.md",
-    "Unit V DVA.md",
-    "UNIT 2 DVA.md",
-    "Unit I DVA.md",
     "Untitled",
     "DVA.html",
     "things which i have learnt in sql so far",
