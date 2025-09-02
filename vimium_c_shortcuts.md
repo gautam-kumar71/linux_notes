@@ -83,4 +83,8 @@ If you want to disable Vimium on specific websites, you can do the following:
 2. Scroll down to **"Enable Vimium on certain websites"**.
 3. In the **"Exclude these sites"** field, enter the URL or domain of the sites you want to exclude from Vimium. For example:
    - **`*.example.com`** to exclude all pages on the `example.com` domain.
-4. Click **Save Changes** to apply.
+1. Click **Save Changes** to apply.
+
+
+checking if the git is working or not
+

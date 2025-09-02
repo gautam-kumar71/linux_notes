@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Day15/HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD).md",
-                "mode": "preview",
+                "file": "vimium_c_shortcuts.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD)"
+              "title": "vimium_c_shortcuts"
             }
           }
         ]
@@ -173,8 +173,8 @@
   },
   "active": "26855fb9ca991bd9",
   "lastOpenFiles": [
-    "Day15/Setting Up SSH Key-Based Authentication.md",
     "Day15/HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD).md",
+    "Day15/Setting Up SSH Key-Based Authentication.md",
     "Day14/Secure File Transfer (SFTP) Cheat Sheet.md",
     "Day12/Auth Logs.md",
     "Day13/Computer Control Commands.md",
