@@ -86,5 +86,3 @@ If you want to disable Vimium on specific websites, you can do the following:
 1. Click **Save Changes** to apply.
 
 
-checking if the git is working or not
-
