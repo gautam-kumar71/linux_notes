@@ -167,11 +167,15 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "26855fb9ca991bd9",
   "lastOpenFiles": [
+    "Untitled 1.md",
+    "vimium_c_shortcuts.md",
+    "Untitled.md",
     "Day15/HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD).md",
     "Day15/Setting Up SSH Key-Based Authentication.md",
     "Day14/Secure File Transfer (SFTP) Cheat Sheet.md",
@@ -208,9 +212,6 @@
     "notes.md",
     "Process signals.md",
     "things to do.md",
-    "UNIT I CC.md",
-    "UNIT 2 CC.md",
-    "to make notes.md",
     "Untitled",
     "DVA.html",
     "things which i have learnt in sql so far",
