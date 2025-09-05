@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -171,7 +172,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "26855fb9ca991bd9",
+  "active": "6723bec261ccfe08",
   "lastOpenFiles": [
     "vimium_c_shortcuts.md",
     "Untitled 1.md",
