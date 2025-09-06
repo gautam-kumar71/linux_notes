@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "359fc65fefd0de1c",
+        "id": "76d4da20334b5ef1",
         "type": "tabs",
         "children": [
           {
-            "id": "26855fb9ca991bd9",
+            "id": "81566840e8eaef60",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Revision Tracker.md",
+                "file": "Object Oriented Programming (OOP).md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Revision Tracker"
+              "title": "Object Oriented Programming (OOP)"
             }
           }
         ]
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -172,8 +171,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6723bec261ccfe08",
+  "active": "81566840e8eaef60",
   "lastOpenFiles": [
+    "Untitled 3.base",
+    "Revision Tracker.md",
     "vimium_c_shortcuts.md",
     "Untitled 1.md",
     "Untitled.md",
@@ -184,7 +185,6 @@
     "Day13/Computer Control Commands.md",
     "Day11/Linux Load Average - Summary.md",
     "Day09/Understanding the `cp` Command.md",
-    "Revision Tracker.md",
     "Untitled 2.base",
     "Untitled 1.base",
     "Object Oriented Programming (OOP).md",
@@ -212,13 +212,11 @@
     "Day02/📂Moving and Organizing Files in Linux.md",
     "notes.md",
     "Process signals.md",
-    "things to do.md",
     "Untitled",
     "DVA.html",
     "things which i have learnt in sql so far",
     "HOW TO LOGIN INTO YOUR HOST COMPUTER REMOTELY USING SSH.txt",
     "Day15",
-    "Day14",
-    "Day13"
+    "Day14"
   ]
 }
