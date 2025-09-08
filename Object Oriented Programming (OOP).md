@@ -1952,3 +1952,17 @@ If a class **inherits** from a base class that has a **pure virtual function**, 
     - It can still be used as a **base class** for further derivation.
 
 
+# Aniket is a good boy
+[aniket](https://google.com)
+```cpp
+#inlcude <iostream>
+using namespace std;
+int main()
+{
+cout<<"hi"<<endl;
+}
+
+```
+
+
+

@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "523a77c82cf64cd7",
@@ -173,6 +174,7 @@
   },
   "active": "81566840e8eaef60",
   "lastOpenFiles": [
+    "Object Oriented Programming (OOP).md",
     "Untitled 3.base",
     "Revision Tracker.md",
     "vimium_c_shortcuts.md",
@@ -187,7 +189,6 @@
     "Day09/Understanding the `cp` Command.md",
     "Untitled 2.base",
     "Untitled 1.base",
-    "Object Oriented Programming (OOP).md",
     "Day10/Important Note.md",
     "Day10/Exploring File Links in Linux.md",
     "Untitled.base",
