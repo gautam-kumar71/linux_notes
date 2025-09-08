@@ -102,6 +102,7 @@ int main()
 {
 Student s1;
 cout<<sizeof(s1); //gives 8 bytes ; a a a a c but 5 is not divisible by the largest data elem ; so nearest possible number will be 8
+// The size of a struct/class must be a multiple of the largest member alignment requirement.
 }
 ```
 
