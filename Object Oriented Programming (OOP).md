@@ -190,7 +190,7 @@ objName->propertyname = value;
 ```
 
 # Constructor and Destructor
-- It is a special function that is invoked automatically at the time of object creation
+- It is a  non-static special function that is invoked automatically at the time of object creation
 - Name of the constructor should be same as the class name
 - It doesn't have any return type
 - It is used to initialize the value
