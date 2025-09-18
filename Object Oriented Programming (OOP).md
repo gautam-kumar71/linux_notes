@@ -1426,6 +1426,7 @@ int main()
 {
    Student s1("Gautam",22,166,77969);
    s1.display();
+   cout<<"----------------------Now the operation will be of teacher obj"<<endl;
    Teacher t(99,"pinky",28);
    t.display();
 }
@@ -1440,16 +1441,31 @@ int main()
 ---
 
 ### ⚠️ Key Learning Points:
+#vvi
+ 1.  Whenever you **create an object of a derived class**, **first the base class constructor gets called** (because the base part of the object must be initialized before the derived part). 
 
-1. **If you don’t explicitly call a base constructor in the initializer list, the compiler automatically calls the default constructor of the base.**  
+ 2. **If you don’t explicitly call a base constructor in the initializer list, the compiler automatically calls the default constructor of the base.**  
     (That’s why Teacher used Human()).
-    
-2. **Destructors are called in reverse order:**
+  
+3. **Destructors are called in reverse order:**
      (this applies to all the types of inheritance)
     - First derived class destructor
         
     - Then base class destructor
 #note 
+
+### General Rule:
+
+Whenever you create an object of a derived class:
+
+👉 **First the base class constructor runs, then the derived class constructor.** If there is no constructor defined in derived class , then the compiler will create it first, and then the default constructor of base class is called, 
+
+`QUESTION:If i comment out the default constructor of Human class, will it throw an error?'
+
+`Answer:`
+✅ So the rule is:  
+If the base class **does not have a default constructor**, every derived class constructor **must** explicitly call one of the available base constructors in its initializer list.`
+
 Teacher and Student are children of the Human parent class.  
 When a Student object goes out of scope, its destructor is called first, followed by the destructor of the Human class.
 Similarly, when a Teacher object goes out of scope, its destructor is called first, followed by the destructor of its parent class, Human.  
