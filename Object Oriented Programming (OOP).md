@@ -453,6 +453,8 @@ int main()
 
 ---
 ### 📝 **C++ Constructor Initializer List vs `this->` Usage**
+`
+`An initializer list is the part of a constructor, written after a colon (`:`), that initializes member variables before the constructor body runs.`
 
 #### ✅ **Correct Syntax for Member Initializer List**
 
@@ -572,7 +574,8 @@ int main()
     obj2.display();
     //another way of copying
     Customer obj3;
-    obj3=obj2;
+    obj3=obj2;//it is not using the custom copy constructor rather it uses 
+              //copy assignment operator
     obj3.display();
 }
 ```
