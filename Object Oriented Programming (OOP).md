@@ -1458,7 +1458,7 @@ int main()
 
 Whenever you create an object of a derived class:
 
-👉 **First the base class constructor runs, then the derived class constructor.** If there is no constructor defined in derived class , then the compiler will create it first, and then the default constructor of base class is called, 
+👉 **First the base class constructor runs, then the derived class constructor.** If there is no constructor defined in derived class , then the compiler will create it first, and then the default constructor of base class is called.
 
 `QUESTION:If i comment out the default constructor of Human class, will it throw an error?'
 
@@ -1475,7 +1475,7 @@ Similarly, when a Teacher object goes out of scope, its destructor is called fir
 **Hybrid inheritance** is a **combination of two or more types of inheritance**.  
 It usually mixes:
 - **Hierarchical inheritance** (one base, many children)
-- **Multiple inheritance** (a class inherits from more than one base).
+- **Multiple inheritance** (a class inherits from more than one base,many parents one child).
 👉 In C++, hybrid inheritance often leads to the **Diamond Problem** (if two parent classes inherit from the same base class). That’s where **virtual inheritance** comes in.
 
 ![[hybridInheritance.png]]
@@ -1648,10 +1648,6 @@ int main()
     ct.display();
 }
 ```
-
-Good question 👍 Let’s carefully break this down.
-
-It depends **how the inheritance is structured** and **where the method is coming from**.
 
 ---
 
