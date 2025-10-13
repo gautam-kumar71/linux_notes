@@ -1,0 +1,5 @@
+- [x] Reverse a string
+- [x] calculate the compound interest
+- [x] sort the array without using the library sort method
+- [ ] implementation of queues,linked list and stack---insertion,deletion,updation
+- [ ] binary search
