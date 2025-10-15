@@ -427,6 +427,8 @@ int main() {
 ```
 
 ### INLINE CONSTRUCTOR
+
+An **inline constructor** is a constructor defined **inside a class**, which suggests the compiler to **insert its code directly at the point of use** instead of making a separate function call.
 ```cpp
 #include<iostream>
 using namespace std;
@@ -989,6 +991,7 @@ In the above code we don't need to know exactly how this codebase is handling wi
 
 - The capability of a class to derive properties and characteristics from another class is called **Inheritance**.
 - The class from which properties are derived is called the **base class (or parent class)**, and the class that derives these properties is called the **derived class (or child class)**.
+- **Inheritance** is used to **reuse code** and **create relationships** between classes.
 
 | Access Specifier | External Code | Within Class | Derived Class |
 |------------------|---------------|--------------|---------------|
@@ -1907,6 +1910,22 @@ int main(){
 
 Also known as *late binding* and *dynamic polymorphism*, the function call in [*runtime polymorphism*](https://www.geeksforgeeks.org/cpp/virtual-functions-and-runtime-polymorphism-in-cpp/) is resolved at runtime in contrast with compile time polymorphism, where the compiler determines which function call to bind at compilation. Runtime polymorphism is implemented using function overriding with virtual functions.
 
+
+### 🔹 **Early Binding (Static Binding)**
+
+- The function to call is decided **at compile time**.
+    
+- Happens with **normal functions** and **function overloading**.
+    
+- **Faster**, but **less flexible**.
+
+### 🔹 **Dynamic Binding (Late Binding)**
+
+- The function to call is decided **at runtime**.
+    
+- Happens with **virtual functions** and **pointers/references to base class**.
+    
+- **More flexible**, used in **polymorphism**.
 ### Function overriding 
 
 [*Function Overriding*](https://www.geeksforgeeks.org/cpp/function-overriding-in-cpp/) occurs when a derived class defines one or more member functions of the base class. That base function is said to be *overridden*. The base class function must be declared as [*virtual function*](https://www.geeksforgeeks.org/cpp/virtual-function-cpp/) for runtime polymorphism to happen.
@@ -1925,6 +1944,62 @@ The real power of **overriding** comes when you use **a base class pointer or re
 - If `display()` is not virtual, this will **call the base class version**, not the derived one.
 
 
+
+
+
+#important 
+### 🔹 **Constructors**
+
+- ❌ **Constructors cannot be virtual.**    
+- Reason: When a constructor runs, the object is **not fully created yet**, so there’s **no virtual table (vtable)** to decide which version to call.
+✅ But — you **can call a base constructor** from a derived class constructor using an initializer list:
+
+```cpp
+class Base {
+public:
+    Base() { cout << "Base constructor\n"; }
+};
+
+class Derived : public Base {
+public:
+    Derived() { cout << "Derived constructor\n"; }
+};
+```
+
+---
+
+### 🔹 **Destructors**
+
+- ✅ **Destructors can (and often should) be virtual**, especially in **base classes**.
+- Reason: It ensures the **derived class destructor** runs first when deleting through a **base class pointer**.
+✅ Example:
+
+```cpp
+class Base {
+public:
+    virtual ~Base() { cout << "Base destructor\n"; }
+};
+
+class Derived : public Base {
+public:
+    ~Derived() { cout << "Derived destructor\n"; }
+};
+
+Base* ptr = new Derived();
+delete ptr;  // calls Derived → Base destructors (correct)
+```
+
+If the destructor were **not virtual**, only the **Base destructor** would run — ❌ causing resource leaks.
+
+---
+#Ramban
+**Virtual destructor** is needed only when you **delete derived objects through a base class pointer**.
+✅ Prevents resource leaks in polymorphic scenarios.
+
+### **In short**
+
+- **Stack objects:** destructors automatically run in correct order → virtual not needed.
+- **Heap objects via base pointers:** virtual destructor **must** be used to safely delete derived objects.
 
 
 
@@ -1969,17 +2044,6 @@ If a class **inherits** from a base class that has a **pure virtual function**, 
     - It can still be used as a **base class** for further derivation.
 
 
-# Aniket is a good boy
-[aniket](https://google.com)
-```cpp
-#inlcude <iostream>
-using namespace std;
-int main()
-{
-cout<<"hi"<<endl;
-}
-
-```
 
 
 
