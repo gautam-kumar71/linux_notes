@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Object Oriented Programming (OOP).md",
+                "file": "DBMS Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Object Oriented Programming (OOP)"
+              "title": "DBMS Notes"
             }
           }
         ],
@@ -202,9 +202,9 @@
   },
   "active": "260966cae0bac4b1",
   "lastOpenFiles": [
-    "1Interview questions.md",
-    "DBMS.md",
     "Object Oriented Programming (OOP).md",
+    "DBMS Notes.md",
+    "1Interview questions.md",
     "Untitled 2.md",
     "2 coding questions asked in interview.md",
     "Pasted image 20251012220105.png",

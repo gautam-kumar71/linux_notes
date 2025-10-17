@@ -2012,6 +2012,13 @@ If the destructor were **not virtual**, only the **Base destructor** would run �
 | **Member Functions**  | Can have member functions in C++                        | Can have member functions in C++                                         | Can have member functions, constructors, destructors                    |
 | **Use Case**          | Group related variables.                                | Save memory when storing **one of many possible types**.                 | Encapsulate **data + behavior**, implement OOP.                         |
 
+| Top Down approach : c                 |
+| ------------------------------------- |
+| Divide into smaller functions/classes |
+
+| Bottom up approach : cpp           |
+| ---------------------------------- |
+| Build classes → integrate → system |
 
 #verbose_notes
 
