@@ -2001,7 +2001,16 @@ If the destructor were **not virtual**, only the **Base destructor** would run â
 - **Stack objects:** destructors automatically run in correct order â†’ virtual not needed.
 - **Heap objects via base pointers:** virtual destructor **must** be used to safely delete derived objects.
 
+---
 
+| **Feature**           | **Struct**                                              | **Union**                                                                | **Class**                                                               |
+| --------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| **Definition**        | User-defined data type to store **group of variables**. | Special data type where all members **share the same memory location**.  | User-defined data type for **data + functions**, supports OOP concepts. |
+| **Memory Allocation** | Each member gets its **own memory**.                    | All members **share the same memory**; only one member stored at a time. | Each object has its **own memory** for members.                         |
+| **Access Specifier**  | Default **public**.                                     | Default **public**.                                                      | Default **private**.                                                    |
+| **Inheritance**       | Cannot have inheritance.                                | Cannot have inheritance.                                                 | Supports **inheritance, polymorphism, encapsulation**.                  |
+| **Member Functions**  | Can have member functions in C++                        | Can have member functions in C++                                         | Can have member functions, constructors, destructors                    |
+| **Use Case**          | Group related variables.                                | Save memory when storing **one of many possible types**.                 | Encapsulate **data + behavior**, implement OOP.                         |
 
 
 #verbose_notes
