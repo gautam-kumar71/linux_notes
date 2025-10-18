@@ -374,11 +374,15 @@ These are specific rules that ensure **data uniqueness and validity**.
 ---
 ### Normalisation- from notes (revise once from youtube too)
 ### Transactions - from notes
+### Indexing -->  [Indexing](https://takeuforward.org/dbms/indexing-and-its-types)(Tuf)
+### clustering-->From notes 
 
-### Indexing, clustering, partitioning and sharding
+Will do later:
+### partitioning and sharding-->ytb love babbar
+### Types of Database-->chatgpt+ytb love babbar
 
-
-
+#Todo
+Lec-13 will look later(only understand the concept that's it, and say the ans in your own words)
 
 ## **SDLC (Software Development Life Cycle)**
 ### 🔹 **Definition**
