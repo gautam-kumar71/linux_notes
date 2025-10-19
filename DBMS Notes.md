@@ -63,7 +63,7 @@ A Database Management System (DBMS) is software designed to manage, manipulate, 
 | Security & Efficiency | Less secure and less efficient | More secure and reliable               |
 
 **Examples:**  
-- DBMS: File System
+- DBMS: File System,XML
 - RDBMS: MySQL, Oracle, SQL Server
 
 ---

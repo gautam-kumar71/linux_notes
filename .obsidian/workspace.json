@@ -1,0 +1,223 @@
+{
+  "main": {
+    "id": "c15a676354eabb77",
+    "type": "split",
+    "children": [
+      {
+        "id": "76d4da20334b5ef1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "260966cae0bac4b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DBMS Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DBMS Notes"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "02f98e3afb27f483",
+    "type": "split",
+    "children": [
+      {
+        "id": "bca0851a6e87007f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a3bfa9a76ce2382e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "6723bec261ccfe08",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "c7de0bcbb418739e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "523a77c82cf64cd7",
+    "type": "split",
+    "children": [
+      {
+        "id": "ead540528ca1366b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b8c10b2ca7421cb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Day1/day1.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for day1"
+            }
+          },
+          {
+            "id": "1796486f77610e2b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Day1/day1.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from day1"
+            }
+          },
+          {
+            "id": "3d69a896933ecb10",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "bf428c0fd2d75f63",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Day1/day1.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of day1"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "260966cae0bac4b1",
+  "lastOpenFiles": [
+    "Untitled 13.base",
+    "Untitled 12.base",
+    "Untitled 11.base",
+    "Untitled 10.base",
+    "Untitled 9.base",
+    "Untitled 8.base",
+    "Untitled 7.base",
+    "DBMS Notes.md",
+    "Object Oriented Programming (OOP).md",
+    "1Interview questions.md",
+    "Untitled 2.md",
+    "2 coding questions asked in interview.md",
+    "Pasted image 20251012220105.png",
+    "Untitled 6.base",
+    "Untitled 5.base",
+    "Untitled 4.base",
+    "vimium_c_shortcuts.md",
+    "Untitled 3.base",
+    "Revision Tracker.md",
+    "Untitled 1.md",
+    "Untitled.md",
+    "Day15/HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD).md",
+    "Day15/Setting Up SSH Key-Based Authentication.md",
+    "Day14/Secure File Transfer (SFTP) Cheat Sheet.md",
+    "Day12/Auth Logs.md",
+    "Day13/Computer Control Commands.md",
+    "Day11/Linux Load Average - Summary.md",
+    "Day09/Understanding the `cp` Command.md",
+    "Day10/Important Note.md",
+    "Day10/Exploring File Links in Linux.md",
+    "multiPath.png",
+    "hybridInheritance.png",
+    "hierachicalInheritance.png",
+    "projects to  make for offcampus placements.md",
+    "PROJECT.md",
+    "Day01/File and Dir operations.md",
+    "Day08/File Compression.md",
+    "Day06/Short Notes on File Ownership and Permissions.md",
+    "inheritence3.webp",
+    "Multilevel-inheritence2 1.webp",
+    "Multilevel-inheritence2.webp",
+    "diagram1.png",
+    "diagram2.png",
+    "diagram3.png",
+    "timetable.md",
+    "UNIT 3 CC.md"
+  ]
+}
