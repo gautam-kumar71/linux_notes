@@ -81,7 +81,7 @@ A Database Management System (DBMS) is software designed to manage, manipulate, 
 
 ## Disadvantages of DBMS
 1. Costly: Expensive to install and maintain.  
-2. Complexity: Requires trained personnel to manage and operate.  
+2. Complexity: Requires trained person to manage and operate.  
 3. Performance Overhead: Can be slower for simple applications due to overhead.  
 4. Centralized Failure Risk: If the central DB fails, all users are affected.  
 5. Security Risks: If not properly managed, sensitive data may be exposed.
