@@ -2060,6 +2060,10 @@ If a class **inherits** from a base class that has a **pure virtual function**, 
     - It can still be used as a **base class** for further derivation.
 
 
+A **dangling pointer** is a pointer that **points to memory that has been freed or deleted** — meaning the pointer still holds the old memory address, but that memory is **no longer valid**.
+
+Using or dereferencing such a pointer leads to **undefined behavior** — your program may crash, produce garbage values, or behave unpredictably.
+
 
 
 
