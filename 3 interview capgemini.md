@@ -26,4 +26,5 @@
 
 Why should we hire you?
 
-You should hire me because I bring a mix of technical skills, teamwork, and adaptability. I’m a good learner , I handle challenges positively, and I stay consistent with deadlines. My goal aligns with Capgemini’s mission to work with teams and work on project effectively.
+You should hire me because I bring a mix of technical skills, teamwork, and adaptability. I’m a good learner , I handle challenges positively, and I stay consistent with deadlines. My goal aligns with Capgemini’s mission to work with teams and work on project effectively. So, i believe i can be a valuable asset to your company.
+
