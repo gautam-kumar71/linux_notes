@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DBMS Notes.md",
-                "mode": "preview",
+                "file": "2 coding questions asked in interview.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DBMS Notes"
+              "title": "2 coding questions asked in interview"
+            }
+          },
+          {
+            "id": "b19e0e804732eff0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3 interview capgemini.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3 interview capgemini"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,8 +186,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "260966cae0bac4b1",
+  "active": "b19e0e804732eff0",
   "lastOpenFiles": [
+    "2 coding questions asked in interview.md",
+    "3 interview capgemini.md",
+    "1Interview questions.md",
+    "DBMS Notes.md",
     "Untitled 13.base",
     "Untitled 12.base",
     "Untitled 11.base",
@@ -180,17 +199,13 @@
     "Untitled 9.base",
     "Untitled 8.base",
     "Untitled 7.base",
-    "DBMS Notes.md",
     "Object Oriented Programming (OOP).md",
-    "1Interview questions.md",
     "Untitled 2.md",
-    "2 coding questions asked in interview.md",
     "Pasted image 20251012220105.png",
     "Untitled 6.base",
     "Untitled 5.base",
     "Untitled 4.base",
     "vimium_c_shortcuts.md",
-    "Untitled 3.base",
     "Revision Tracker.md",
     "Untitled 1.md",
     "Untitled.md",
