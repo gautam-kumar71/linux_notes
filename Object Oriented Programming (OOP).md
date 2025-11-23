@@ -2064,6 +2064,8 @@ A **dangling pointer** is a pointer that **points to memory that has been freed 
 
 Using or dereferencing such a pointer leads to **undefined behavior** — your program may crash, produce garbage values, or behave unpredictably.
 
+## also need to do exception handling
+
 
 
 
