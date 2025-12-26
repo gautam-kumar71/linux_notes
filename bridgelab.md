@@ -27,7 +27,7 @@
 -  Successfully pushed initial files to GitHub repository.  
 
 🔗 **Code Link:**  
-[👉 Day 1 - Core Java Practice](https://github.com/Prashant-kumar-sharma/BridgeLabz-Training/tree/core-java-practice)
+[👉 Day 1 - Core Java Practice](https://github.com/gautam-kumar71/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/program-prerequisites)
 
 ---
 
