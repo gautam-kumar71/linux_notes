@@ -12,6 +12,7 @@
 | **4.0**  | 4 cores used, 4 idle (50% CPU usage) or 50% CPU usage is shared among all the cores          |
 | **8.0**  | All 8 cores fully utilized (100% CPU usage) or 100% CPU usage is shared among all the cores  |
 | **12.0** | CPU overloaded (8 busy, 4 waiting).                                                          |
+|          |                                                                                              |
 
 #### **Key Takeaways:**
 
