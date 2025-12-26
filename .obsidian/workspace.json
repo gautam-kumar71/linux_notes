@@ -8,33 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b05921e581b6a893",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Untitled.base",
-                "viewName": "Table"
-              },
-              "icon": "lucide-table",
-              "title": "Untitled"
-            }
-          },
-          {
             "id": "f2579717640d9d38",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Untitled 4.base",
-                "viewName": "Table"
+                "file": "dj.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Untitled 4"
+              "icon": "lucide-file",
+              "title": "dj"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -186,6 +173,7 @@
   },
   "active": "f2579717640d9d38",
   "lastOpenFiles": [
+    "Untitled 4.base",
     "Untitled 4.md",
     "Untitled.base",
     "Computer Vision Unit V.md",
@@ -201,7 +189,7 @@
     "Untitled 12.base",
     "Untitled 13.base",
     "Day11/Linux Load Average - Summary.md",
-    "Untitled 3.md",
+    "dj.md",
     "Object Oriented Programming (OOP).md",
     "DBMS Notes.md",
     "PROJECT.md",
