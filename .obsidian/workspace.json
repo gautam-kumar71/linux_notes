@@ -13,14 +13,28 @@
             "state": {
               "type": "bases",
               "state": {
-                "file": "Untitled 11.base",
+                "file": "Untitled.base",
                 "viewName": "Table"
               },
               "icon": "lucide-table",
-              "title": "Untitled 11"
+              "title": "Untitled"
+            }
+          },
+          {
+            "id": "f2579717640d9d38",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Untitled 4.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "Untitled 4"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,17 +184,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b05921e581b6a893",
+  "active": "f2579717640d9d38",
   "lastOpenFiles": [
+    "Untitled 4.md",
+    "Untitled.base",
+    "Computer Vision Unit V.md",
+    "Computer Vision Unit IV.md",
+    "Computer Vision Unit III.md",
+    "Computer Vision Unit II.md",
+    "computer vision unit 1.md",
+    "Untitled 7.base",
+    "Untitled 8.base",
+    "Untitled 9.base",
+    "Untitled 10.base",
+    "Untitled 11.base",
     "Untitled 12.base",
     "Untitled 13.base",
     "Day11/Linux Load Average - Summary.md",
     "Untitled 3.md",
-    "Computer Vision Unit III.md",
-    "Computer Vision Unit IV.md",
-    "Computer Vision Unit II.md",
-    "Computer Vision Unit V.md",
-    "computer vision unit 1.md",
     "Object Oriented Programming (OOP).md",
     "DBMS Notes.md",
     "PROJECT.md",
@@ -188,16 +209,10 @@
     "3 interview capgemini.md",
     "1Interview questions.md",
     "2 coding questions asked in interview.md",
-    "Untitled 11.base",
-    "Untitled 10.base",
-    "Untitled 9.base",
-    "Untitled 8.base",
-    "Untitled 7.base",
     "Untitled 2.md",
     "Pasted image 20251012220105.png",
     "Untitled 6.base",
     "Untitled 5.base",
-    "Untitled 4.base",
     "vimium_c_shortcuts.md",
     "Revision Tracker.md",
     "Untitled 1.md",
@@ -207,7 +222,6 @@
     "Day14/Secure File Transfer (SFTP) Cheat Sheet.md",
     "Day12/Auth Logs.md",
     "Day13/Computer Control Commands.md",
-    "Day09/Understanding the `cp` Command.md",
     "multiPath.png",
     "hybridInheritance.png",
     "hierachicalInheritance.png",
