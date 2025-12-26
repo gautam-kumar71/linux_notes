@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dj.md",
+                "file": "bridgelab.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "dj"
+              "title": "bridgelab"
             }
           }
         ]
@@ -171,7 +171,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f2579717640d9d38",
+  "active": "a3bfa9a76ce2382e",
   "lastOpenFiles": [
     "Untitled 4.base",
     "Untitled 4.md",
@@ -189,7 +189,7 @@
     "Untitled 12.base",
     "Untitled 13.base",
     "Day11/Linux Load Average - Summary.md",
-    "dj.md",
+    "bridgelab.md",
     "Object Oriented Programming (OOP).md",
     "DBMS Notes.md",
     "PROJECT.md",

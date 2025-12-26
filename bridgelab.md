@@ -1,5 +1,6 @@
-BridgeLabz Training Progress Log
+# BridgeLabz Training Progress Log   
 
+---
 
 ## Week 1 – Java Programming Fundamentals
 
