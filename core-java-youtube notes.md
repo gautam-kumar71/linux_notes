@@ -55,8 +55,3 @@ public class Demo {
  *This is an example of java doc comment. {@link Stable}
  */
 ```
-
-# for krishna
-```java 
-System.out.println("hello my dear friend")
-```
