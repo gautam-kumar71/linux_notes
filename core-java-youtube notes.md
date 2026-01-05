@@ -4,6 +4,10 @@
 - If  `public` class is there, the file name must be public
 - if we run `javac` .class file is generated, but after version 11, java introduced a new mode call source file mode, where a java program can be compiled and run  using the command java fileName.java, and in that case the .class file won't be generated rather it will get generated in memory.The .class file is generated in a temporary way in memory and is not stored in locally
 - #newVersion In compact code and instance, the main method can be written as 
-     ```java 
-     main
+    
+    ```java 
+         void main(String args[])
+         {
+            System.out.println("This method was introduced in java version 21+");
+         }
      ```
