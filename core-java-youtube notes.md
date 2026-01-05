@@ -2,4 +2,4 @@
 # IMPORTANT CONCEPTS
 - _Platform independence:_ `.class` file can be run from anywhere. Suppose it is compiled in windows operating system, the `.class` file generated can be run on linux, mac or any other os.
 - If  `public` class is there, the file name must be public
-- if we run `javac` .class file is generated, but after version 11, java introduced a new mode call source file mode, where a java program can be compiled asrun using the command java fileName.java, and in that case the .class file won't be generated rather it will get generated in memory.
+- if we run `javac` .class file is generated, but after version 11, java introduced a new mode call source file mode, where a java program can be compiled and run  using the command java fileName.java, and in that case the .class file won't be generated rather it will get generated in memory.The .class file is generated in a temporary way in memory
