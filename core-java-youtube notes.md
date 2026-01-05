@@ -8,6 +8,7 @@
     ```java 
          void main(String args[])
          {
-            System.out.println("This new way was in preview in ja");
+            System.out.println("This new way was in preview in java version 21 to 24");
+            System.out.println("It was later finallized in version 25");
          }
      ```
