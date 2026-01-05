@@ -31,3 +31,4 @@ public class Demo{
  ```
  
 
+# Dynamic strings printing
