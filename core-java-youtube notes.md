@@ -12,3 +12,10 @@
             System.out.println("It was later finallized in version 25");
          }
      ```
+ #validWay :
+ ```java
+       void main(String args[])
+       {
+          System.out.println("This is also valid");
+       }
+ ```
