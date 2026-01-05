@@ -32,3 +32,8 @@ public class Demo{
  
 
 # Dynamic strings printing
+```java 
+ int age=22;
+ String name="Gautam";
+ System.out.println("Hello my name is )
+```
