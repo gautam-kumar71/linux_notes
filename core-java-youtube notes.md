@@ -21,7 +21,7 @@
        }
  ```
 - 2
-- ```
+```java
 public class Demo{
        void main(String args[])
        {
@@ -29,4 +29,5 @@ public class Demo{
        } 
  }
  ```
+ 
 
