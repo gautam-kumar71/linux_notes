@@ -35,5 +35,5 @@ public class Demo{
 ```java 
  int age=22;
  String name="Gautam";
- System.out.println("Hello my name is )
+ System.out.println(STR."Hello my name is \{name} and my age is \{age});
 ```
