@@ -13,9 +13,20 @@
          }
      ```
  #validWay :
+- 1
  ```java
        void main(String args[])
        {
           System.out.println("This is also valid");
        }
  ```
+- 2
+- ```
+public class Demo{
+       void main(String args[])
+       {
+          System.out.println("This is also valid");
+       } 
+ }
+ ```
+
