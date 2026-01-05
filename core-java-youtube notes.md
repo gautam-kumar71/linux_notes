@@ -48,5 +48,7 @@ public class Demo {
 # Java doc comments
 
 ```java
- 
+ /**
+ *This is an example of java doc comment. {@}
+ */
 ```
