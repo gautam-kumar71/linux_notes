@@ -33,7 +33,14 @@ public class Demo{
 
 # Dynamic strings printing
 ```java 
- int age=22;
- String name="Gautam";
- System.out.println(STR."Hello my name is \{name} and my age is \{age});
+
+public class Demo {
+    public static void main(String[] args) {
+        int age = 22;
+        String name = "Gautam";
+
+        System.out.println(STR."Hello my name is \{name} and my age is \{age}");
+    }
+}
+
 ```
