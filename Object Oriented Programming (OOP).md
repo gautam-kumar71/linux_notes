@@ -334,6 +334,20 @@ MyClass obj;  // ❌ Error: no matching default constructor
 - All constructors must have **unique parameter types or counts**.
 - The compiler figures out which constructor to call based on the arguments you pass.
 - The compiler uses the **number** and **types** (and **order**) of parameters to distinguish between overloaded constructors.
+- - **Different parameter list**
+    
+    - Different number of parameters
+        
+    - Different data types
+        
+    - Different **order** of parameters
+        
+
+```cpp
+MyClass(int a, String b) {} //allowed
+MYClass(String b, int a) {}//allowed
+//here the order is different
+```
 
 ```cpp
 #include <iostream>
@@ -2064,7 +2078,23 @@ A **dangling pointer** is a pointer that **points to memory that has been freed 
 
 Using or dereferencing such a pointer leads to **undefined behavior** — your program may crash, produce garbage values, or behave unpredictably.
 
+#todo
 ## also need to do exception handling
+
+
+### 🔹 Accessing instance variable
+
+- Via object:
+    
+
+`A obj = new A(); obj.x = 10;`
+
+- Inside non-static method:
+    
+
+`void show() {     System.out.println(x); }`
+
+- ❌ Cannot access directly inside static method
 
 
 
