@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "core-java-youtube notes.md",
-                "mode": "source",
+                "file": "Day15/HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD).md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "core-java-youtube notes"
+              "title": "HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD)"
             }
           }
         ]
@@ -173,8 +173,12 @@
   },
   "active": "13587f107f9251d1",
   "lastOpenFiles": [
-    "bridgelab.md",
+    "Day03/🗑️Removing Files & Directories in Linux.md",
+    "Day06/Short Notes on File Ownership and Permissions.md",
+    "Day08/File Compression.md",
+    "UNIT 2 CC.md",
     "core-java-youtube notes.md",
+    "bridgelab.md",
     "Untitled 4.base",
     "Untitled 4.md",
     "Untitled.base",
@@ -206,10 +210,6 @@
     "Untitled 1.md",
     "Untitled.md",
     "Day15/HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD).md",
-    "Day15/Setting Up SSH Key-Based Authentication.md",
-    "Day14/Secure File Transfer (SFTP) Cheat Sheet.md",
-    "Day12/Auth Logs.md",
-    "Day13/Computer Control Commands.md",
     "multiPath.png",
     "hybridInheritance.png",
     "hierachicalInheritance.png",
