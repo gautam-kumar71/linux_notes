@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Day10/Important Note.md",
-                "mode": "source",
+                "file": "DBMS Notes.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Important Note"
+              "title": "DBMS Notes"
             }
           }
         ]
@@ -173,6 +173,7 @@
   },
   "active": "13587f107f9251d1",
   "lastOpenFiles": [
+    "Day10/Important Note.md",
     "Day10/Exploring File Links in Linux.md",
     "Day08/File Compression.md",
     "Day07/Absolute vs Relative Paths.md",
@@ -208,7 +209,6 @@
     "sql commands learnt so far.md",
     "3 interview capgemini.md",
     "1Interview questions.md",
-    "2 coding questions asked in interview.md",
     "Pasted image 20251012220105.png",
     "multiPath.png",
     "hybridInheritance.png",
