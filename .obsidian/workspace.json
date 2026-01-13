@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "DBMS Notes"
             }
+          },
+          {
+            "id": "0162c0661fa2a607",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.4"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,7 +184,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "13587f107f9251d1",
+  "active": "0162c0661fa2a607",
   "lastOpenFiles": [
     "Day10/Important Note.md",
     "Day10/Exploring File Links in Linux.md",
