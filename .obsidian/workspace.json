@@ -13,28 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DBMS Notes.md",
+                "file": "Object Oriented Programming (OOP).md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DBMS Notes"
-            }
-          },
-          {
-            "id": "0162c0661fa2a607",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.11.4"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.11.4"
+              "title": "Object Oriented Programming (OOP)"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -184,8 +171,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0162c0661fa2a607",
+  "active": "13587f107f9251d1",
   "lastOpenFiles": [
+    "DBMS Notes.md",
     "Day10/Important Note.md",
     "Day10/Exploring File Links in Linux.md",
     "Day08/File Compression.md",
@@ -217,7 +205,6 @@
     "Untitled 10.base",
     "Untitled 11.base",
     "Untitled 12.base",
-    "DBMS Notes.md",
     "PROJECT.md",
     "sql commands learnt so far.md",
     "3 interview capgemini.md",
