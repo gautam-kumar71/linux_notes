@@ -35,33 +35,21 @@
             }
           },
           {
-            "id": "85fead78a02cd656",
+            "id": "d882569e2f30efef",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Untitled 3.base",
-                "viewName": "Table"
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Untitled 3"
-            }
-          },
-          {
-            "id": "eefe52c7aeaf521e",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Untitled 4.base",
-                "viewName": "Table"
-              },
-              "icon": "lucide-table",
-              "title": "Untitled 4"
+              "icon": "lucide-file",
+              "title": "Untitled"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -211,10 +199,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "eefe52c7aeaf521e",
+  "active": "d882569e2f30efef",
   "lastOpenFiles": [
-    "Untitled 3.base",
     "Untitled 1.base",
+    "Untitled.md",
+    "UNIT 2 CC.md",
+    "Untitled 2.md",
+    "Untitled 4.base",
+    "Untitled 3.base",
     "Untitled 15.base",
     "Untitled 10.base",
     "Untitled 9.base",
@@ -235,20 +227,15 @@
     "Day03/🗑️Removing Files & Directories in Linux.md",
     "Day02/📂Moving and Organizing Files in Linux.md",
     "Day11/Linux Load Average - Summary.md",
-    "Untitled 14.base",
     "Day15/HOW TO LOGIN INTO A REMOTE SERVER USING SSH WITH USER LOGIN (USERNAME AND PASSWORD).md",
-    "UNIT 2 CC.md",
     "core-java-youtube notes.md",
     "bridgelab.md",
-    "Untitled 4.base",
     "Untitled 4.md",
     "Computer Vision Unit V.md",
     "Computer Vision Unit IV.md",
     "Computer Vision Unit III.md",
     "Computer Vision Unit II.md",
     "computer vision unit 1.md",
-    "PROJECT.md",
-    "sql commands learnt so far.md",
     "Pasted image 20251012220105.png",
     "multiPath.png",
     "hybridInheritance.png",
