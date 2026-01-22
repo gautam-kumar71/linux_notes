@@ -656,13 +656,15 @@ public class VariableShadow {
 
 ### ❌ Static variables are **NOT shadowed by instance variables**
 
-`class A {     
+```java
+class A {     
 static int x = 10; 
 }  
 class B extends A {     
 int x = 20;   // ❌ NOT shadowing, this is hiding (field hiding) 
-}`
-`
+}
+```
+
 👉 This is called **variable hiding**, not variable shadowing  
 👉 Happens **across classes**, not within the same scope
 
