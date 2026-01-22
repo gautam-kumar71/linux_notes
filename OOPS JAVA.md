@@ -807,6 +807,83 @@ public class DataHidingDemo {
 	}
 
 }
+
+
+### ❓ Can static methods be overridden in Java?
+
+### ❌ **NO — static methods CANNOT be overridden.**
+
+---
+
+## 🔹 Why static methods cannot be overridden?
+
+- **Overriding depends on objects (runtime polymorphism)**
+    
+- **Static methods belong to the class, not to objects**
+    
+- Method calls to static methods are resolved at **compile time**
+    
+
+👉 Therefore, **overriding is not possible** for static methods.
+
+---
+
+## ✅ What actually happens instead?
+
+When a subclass defines a static method with the **same signature** as a static method in the superclass, it is called:
+
+> **Method Hiding** (NOT overriding)
+
+---
+
+## ✅ Example: Method Hiding (Often mistaken as overriding)
+
+`class Parent {     static void show() {         System.out.println("Parent show");     } }  class Child extends Parent {     static void show() {         System.out.println("Child show");     } }`
+
+`Parent p = new Child(); p.show();   // Output: Parent show`
+
+### 🔍 Why?
+
+- Method call is decided by **reference type**, not object
+    
+- Confirms **no runtime polymorphism**
+    
+
+---
+
+## ❌ Compare with Real Overriding (Non-Static)
+
+`class Parent {     void show() {         System.out.println("Parent show");     } }  class Child extends Parent {     @Override     void show() {         System.out.println("Child show");     } }`
+
+`Parent p = new Child(); p.show();   // Output: Child show`
+
+✔ Runtime polymorphism  
+✔ True overriding
+
+---
+
+## 📌 Key Differences (Very Important)
+
+| Feature            | Static Method | Non-Static Method |
+| ------------------ | ------------- | ----------------- |
+| Can be overridden? | ❌ No          | ✅ Yes             |
+| Binding            | Compile-time  | Runtime           |
+| Polymorphism       | ❌ No          | ✅ Yes             |
+| Concept used       | Method hiding | Method overriding |
+
+---
+
+## 🧠 One-Line Exam Answer
+
+> **Static methods cannot be overridden in Java; they can only be hidden because static methods belong to the class and are resolved at compile time.**
+
+---
+
+## 🎯 Final Rule to Remember
+
+> **Overriding = Runtime + Object + Non-static**
+
+
 -----------------------------------------------------------------
 How to print Object properties (Non static field) by using toString() method :
 
