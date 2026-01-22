@@ -2,7 +2,7 @@
 ----------------------------------- 
 # `What is an Object ?`
 
-<span style="color: blue; font-weight: bold; font-size: 30px">What is an Object?</span>
+<span style="color: Yellow; font-weight: bold; font-size: 30px">What is an Object?</span>`
 
 An object is a physical entity which exist in the real world.
 Example : Car, Mouse, Remote, Laptop and so on
