@@ -41,8 +41,7 @@ Example : Car, Mouse, Remote, Laptop and so on
 - A class is user-defined data type which contains fields and methods.
 
 ### Example :
-```
-
+```java
 public class Demo
 {
     Fields 
@@ -50,7 +49,7 @@ public class Demo
     Methods
 }
 ```
-```
+
 ##### `A class is a component which is used to define Object properties and Object behavior.`
  
  ```java
@@ -61,9 +60,9 @@ public class Demo
     Methdos [Student Behavior]
  }
  ```
----------------------------------------------------------------------
-WAP to provide student properties and student behavior by using OOP.
-(Diagram is available)
+#question
+`WAP to provide student properties and student behavior by using OOP 
+(Diagram is available)`
 
 Student.java
 --------------
