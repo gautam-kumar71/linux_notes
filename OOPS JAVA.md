@@ -1,7 +1,6 @@
 
 ----------------------------------- 
-What is an Object ?
---------------------
+`What is an Object ?`
 An object is a physical entity which exist in the read world.
 Example : Car, Mouse, Remote, Laptop and so on
 
