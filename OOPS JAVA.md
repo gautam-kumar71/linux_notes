@@ -143,7 +143,7 @@ public class StudentDemo
 #### Instance Variable OR Non static Field :
 
 - Instance variable we can declare at class level.
-- If a `non static variable` is declared inside the class but outside of the method then it is called Instance Variable OR Non static field.
+- If a `non static variable` is declared `inside the class but outside of the method` then it is called Instance Variable OR Non static field.
 
 Example :
 ---------
@@ -156,9 +156,11 @@ public class Student
   }
 }
 
+#important
 An instance variable is automatically created and initialized with default value at the time of Object creation. [We can't even think about instance variable without object creation]
 
-public class Test 
+```jV
+```public class Test 
 {
 	int x = 200; //Instance Variable OR Non static filed
 	
