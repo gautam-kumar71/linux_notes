@@ -159,8 +159,8 @@ public class Student
 #important
 An instance variable is automatically created and initialized with default value at the time of Object creation. [We can't even think about instance variable without object creation]
 
-```jV
-```public class Test 
+```java
+public class Test 
 {
 	int x = 200; //Instance Variable OR Non static filed
 	
@@ -169,6 +169,7 @@ An instance variable is automatically created and initialized with default value
 		System.out.println(x);	//error
 	}
 }
+```
 
 An instance variable is used to represent the properties of an object hence without object instance variable will not exist.
 
