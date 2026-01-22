@@ -371,7 +371,7 @@ We have 2 reasons that why compiler is adding default constructor :
    String - null
    Object - null (For any class i.e reference variable the default value is null)
 
-Program that describes new keyword is repsonsible to allocate the default values for non static variables :
+Program that describes `new keyword` is repsonsible to allocate the default values for non static variables :
 
 Student.java
 -------------
