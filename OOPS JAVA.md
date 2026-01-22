@@ -143,8 +143,7 @@ public class StudentDemo
 #### Instance Variable OR Non static Field :
 
 - Instance variable we can declare at class level.
-
-- If a non static variable is declared inside the class but outside of the method then it is called Instance Variable OR Non static field.
+- If a `non static variable` is declared inside the class but outside of the method then it is called Instance Variable OR Non static field.
 
 Example :
 ---------
