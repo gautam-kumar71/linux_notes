@@ -857,16 +857,17 @@ When a subclass defines a static method with the **same signature** as a static 
 class Parent {     
   void show() {         
   System.out.println("Parent show");     
-  } 
+   } 
   }  
   class Child extends Parent {     
   @Override     
   void show() {         
   System.out.println("Child show");     
-  } 
+   } 
   }
 
-Parent p = new Child(); p.show();   // Output: Child show
+Parent p = new Child(); 
+p.show();   // Output: Child show
 ```
 
 ✔ Runtime polymorphism  
