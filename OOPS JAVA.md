@@ -647,6 +647,10 @@ public class VariableShadow {
 		cust.show(18000);
 	}
 }
+
+
+> **Yes, static variables can be shadowed by local variables or method parameters, but NOT overridden.**
+
 ----------------------------------------------------------------
 this keyword in java :
 ----------------------
