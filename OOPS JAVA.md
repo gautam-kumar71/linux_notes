@@ -132,7 +132,7 @@ public class StudentDemo
 
 ```
 ---
-##### **Steps to develop OOP : **
+### **Steps to develop OOP : **
 
 1) Create BLC and ELC class.
 2) Create an Object for BLC class, inside the ELC class in the main method.
@@ -140,13 +140,11 @@ public class StudentDemo
 4) In the ELC class, With the help of Object reference initialize all the Object properties.
 5) By using Object reference call the methods.
 -----------------------------------------------------------------
-12-02-2025
-----------
-Instance Variable OR Non static Field :
----------------------------------------
-Instance variable we can declare at class level.
+#### Instance Variable OR Non static Field :
 
-If a non static variable is declared inside the class but outside of the method then it is called Instance Variable OR Non static field.
+- Instance variable we can declare at class level.
+
+- If a non static variable is declared inside the class but outside of the method then it is called Instance Variable OR Non static field.
 
 Example :
 ---------
