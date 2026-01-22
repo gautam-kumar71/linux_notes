@@ -131,9 +131,9 @@ public class StudentDemo
 }
 
 ```
+---
+##### **Steps to develop OOP : **
 
-Steps to develop OOP :
-----------------------
 1) Create BLC and ELC class.
 2) Create an Object for BLC class, inside the ELC class in the main method.
 3) Think about Object properties and behavior and write inside the BLC class.
