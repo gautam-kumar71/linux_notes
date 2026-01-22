@@ -14,7 +14,7 @@ Example : Car, Mouse, Remote, Laptop and so on
 - An Object Oriented programming is a technique through which we can develop and design the programs using CLASS and OBJECT.
 - Writing Programs on real life Objects is known as Object Oriented Programming.
 - In OOPs we concentrate on Objects rather than function(Method).
-
+---
 Advantages of OOPs :
 -------------------
 There are 3 advantages :
