@@ -171,7 +171,7 @@ public class Test
 }
 ```
 
-An instance variable is used to represent the properties of an object hence without object instance variable will not exist.
+An instance variable is used to represent the properties of an object hence without object, instance variable will not exist.
 
 As far as it's scope is concerned, An instance variable can be accessible anywhere within the class as well as outside of the class also using valid access modifier.
 
