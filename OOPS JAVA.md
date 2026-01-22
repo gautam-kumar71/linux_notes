@@ -502,7 +502,7 @@ If we declare a variable inside a class with static modifier then it is called s
 
 In order to access the static field, Object is not required, We can access the static field with the help of class name.
 
-A static field is automatically created and initialized with default value at THE TIME LOADING THE .CLASS FILE INTO JVM MEMORY.
+`A static field is automatically created and initialized with default value at THE TIME LOADING THE .CLASS FILE INTO JVM MEMORY.`
 
 Whenever we create an object in java then a single copy of static field will be created and the same single copy will be sharable by all the objects.
 
