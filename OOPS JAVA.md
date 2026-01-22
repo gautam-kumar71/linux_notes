@@ -60,9 +60,10 @@ public class Demo
     Methdos [Student Behavior]
  }
  ```
+ 
 #question
-`WAP to provide student properties and student behavior by using OOP 
-(Diagram is available)`
+##### `WAP to provide student properties and student behavior by using OOP`
+`(Diagram is available)`
 
 Student.java
 --------------
