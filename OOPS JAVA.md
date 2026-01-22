@@ -7,14 +7,12 @@ Example : Car, Mouse, Remote, Laptop and so on
 
 **An Object is having 3 characteristics :**
 
-1) Identification of the Object [Name of the Object]
-2) State of an Object [Data OR Properties of an Object]
-3) Functionality of the Object [What an object can perform]
+1. Identification of the Object [Name of the Object]
+2. State of an Object               [Data OR Properties of an Object]
+3. Functionality of the Object [What an object can perform]
 
 - An Object Oriented programming is a technique through which we can develop and design the programs using CLASS and OBJECT.
-
-- Writing Programs on real life Objects is known as Object Oriented Progamming.
-
+- Writing Programs on real life Objects is known as Object Oriented Programming.
 - In OOPs we concentrate on Objects rather than function(Method).
 
 Advantages of OOPs :
