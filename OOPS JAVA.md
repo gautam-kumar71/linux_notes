@@ -49,7 +49,7 @@ public class Demo
     Methods
 }
 
-*A class is a component which is used to defined Object properties and Object behavior.
+`A class is a component which is used to define Object properties and Object behavior.`
  
  public class Student
  {
