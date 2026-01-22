@@ -506,7 +506,7 @@ In order to access the static field, Object is not required, We can access the s
 
 Whenever we create an object in java then a single copy of static field will be created and the same single copy will be sharable by all the objects.
 
-* It is sharable by all the objects hence if we modify the value by any of the Object reference then it will be mofifiable for all the objects.
+* It is sharable by all the objects hence if we modify the value by any of the Object reference then it will be modifiable for all the objects.
 
 package com.ravi.role_of_static_field;
 
