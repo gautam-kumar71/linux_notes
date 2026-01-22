@@ -914,6 +914,7 @@ In Object there is a predefined non static method called toString(), Any java cl
 
 Right click on the Program -> source -> generate toString()
 
+#research: variables are not polymorp
 How to call toString() method :
 --------------------------------
 If we pass our object reference to the System.out.println() statement then automatically it will call toString() method of the corresponding class.
