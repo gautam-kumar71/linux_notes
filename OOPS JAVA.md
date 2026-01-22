@@ -1,8 +1,5 @@
 
-Object Oriented Programming (OOPs)
------------------------------------
-Object Oriented Progamming means working with real life Objects so first of all we need to know that "What is an Object ?"
-
+----------------------------------- 
 What is an Object ?
 --------------------
 An object is a physical entity which exist in the read world.
