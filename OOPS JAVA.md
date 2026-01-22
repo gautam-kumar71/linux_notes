@@ -1,10 +1,11 @@
 
 ----------------------------------- 
-`What is an Object ?`
+# `What is an Object ?`
+
 An object is a physical entity which exist in the read world.
 Example : Car, Mouse, Remote, Laptop and so on
 
-An Object is having 3 characteristics :
+**An Object is having 3 characteristics :**
 
 1) Identification of the Object [Name of the Object]
 2) State of an Object [Data OR Properties of an Object]
