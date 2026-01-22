@@ -15,13 +15,13 @@ Example : Car, Mouse, Remote, Laptop and so on
 - Writing Programs on real life Objects is known as Object Oriented Programming.
 - In OOPs we concentrate on Objects rather than function(Method).
 ---
-Advantages of OOPs :
--------------------
-There are 3 advantages :
+## Advantages of OOPs :
 
-1) Modularity (Dividing the bigger task into number of smaller task)
-2) Reusability (We can reuse the BLC classes [WORA])
-3) Flexibility (Easy to maintain [Interface])
+**There are 3 advantages :**
+
+1) Modularity   (Dividing the bigger task into number of smaller task)
+2) Reusability    (We can reuse the BLC classes [WORA])
+3) Flexibility      (Easy to maintain [Interface])
 
 Features Of OOPs :
 ------------------
