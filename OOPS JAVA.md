@@ -626,7 +626,7 @@ class Customer
 	String customerName = "Scott";
 	double customerBill = 12000;
 	
-	public void show(double customerBill)
+	public void show(double customerBill) //parameter hides the instance variable
 	{
 		int customerId = 222;
 		String customerName = "Alen";
