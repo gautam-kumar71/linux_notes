@@ -19,7 +19,7 @@ Example : Car, Mouse, Remote, Laptop and so on
 
 **There are 3 advantages :**
 
-1) Modularity   (Dividing the bigger task into number of smaller task)
+1) Modularity    (Dividing the bigger task into number of smaller task)
 2) Reusability    (We can reuse the BLC classes [WORA])
 3) Flexibility      (Easy to maintain [Interface])
 
