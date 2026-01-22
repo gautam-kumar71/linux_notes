@@ -40,8 +40,8 @@ Example : Car, Mouse, Remote, Laptop and so on
 - A class is a logical entity which does not take any space.
 - A class is user-defined data type which contains fields and methods.
 
-Example :
----------
+### Example :
+
 public class Demo
 {
     Fields 
