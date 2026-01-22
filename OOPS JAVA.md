@@ -65,6 +65,8 @@ public class Demo
 ##### `WAP to provide student properties and student behavior by using OOP`
 `(Diagram is available)`
 
+```java
+
 Student.java
 --------------
 package com.ravi.oop;
@@ -90,7 +92,9 @@ public class Student
 	
 	
 }
+```
 
+```java
 StudentDemo.java
 -----------------
 package com.ravi.oop;
@@ -125,6 +129,8 @@ public class StudentDemo
 	}
 
 }
+
+```
 
 Steps to develop OOP :
 ----------------------
