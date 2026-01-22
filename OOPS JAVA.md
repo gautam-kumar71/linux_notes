@@ -23,24 +23,22 @@ Example : Car, Mouse, Remote, Laptop and so on
 2) Reusability    (We can reuse the BLC classes [WORA])
 3) Flexibility      (Easy to maintain [Interface])
 ---
-Features Of OOPs :
+## Features Of OOPs :
 
-There are six features :
-
+**There are six features :**
 1) Class
 2) Object
 3) Abstraction
 4) Encapsulation
 5) Inheritance
 6) Polymorphism
+---
+## What is a class :
 
-What is a class :
--------------------
-A class is a model/bluprint/template/prototype for creating the Object. Object creation is possible by using class template.
-
-A class is a logical entity which does not take any space.
-
-A class is user-defined data type which contains fields and methods.
+- A class is a model/blueprint/template/prototype for creating the Object. 
+- Object creation is possible by using class template.
+- A class is a logical entity which does not take any space.
+- A class is user-defined data type which contains fields and methods.
 
 Example :
 ---------
