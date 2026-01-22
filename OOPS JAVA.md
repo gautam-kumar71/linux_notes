@@ -651,6 +651,22 @@ public class VariableShadow {
 
 > **Yes, static variables can be shadowed by local variables or method parameters, but NOT overridden.**
 
+
+## ❌ What is NOT Allowed (Important!)
+
+### ❌ Static variables are **NOT shadowed by instance variables**
+
+`class A {     
+static int x = 10; 
+}  
+class B extends A {     
+int x = 20;   // ❌ NOT shadowing, this is hiding (field hiding) 
+}`
+`
+👉 This is called **variable hiding**, not variable shadowing  
+👉 Happens **across classes**, not within the same scope
+
+
 ----------------------------------------------------------------
 this keyword in java :
 ----------------------
