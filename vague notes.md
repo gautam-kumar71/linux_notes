@@ -14,5 +14,5 @@ There is no concrete class which implements collection directly
 > - There is **no concrete class that implements `Collection` directly**
 
 >Java does not provide any concrete class that implements Collection directly.  
- However, concrete classes like ArrayList and HashSet implement Collection indirectly through sub-interfaces such as List and Set.
+  However, concrete classes like ArrayList and HashSet implement Collection indirectly through sub-interfaces such as List and Set.
 
