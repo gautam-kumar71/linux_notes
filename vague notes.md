@@ -20,8 +20,8 @@ There is no concrete class which implements collection directly
    the reference decides what you are allowed to use.
 
 >Because **`Collection` is a very general interface**.
-Some collections **do not have an order at all**, for example:
-- `Set`
-- `HashSet`
-If there is **no fixed order**, then retrieving “the 3rd element” makes no sense.
-So Java designers **intentionally did not add** a `get()` method in `Collection`.
+  > Some collections **do not have an order at all**, for example:
+  >- `Set`
+  - `HashSet`
+ >If there is **no fixed order**, then retrieving “the 3rd element” makes no sense.
+ So Java designers **intentionally did not add** a `get()` method in `Collection`.
