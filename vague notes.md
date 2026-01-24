@@ -306,5 +306,6 @@ Without sync:
 - threads may see **stale values**
 
 
-
+## **Thread safety means:**  
+No matter how many threads run concurrently, the program always behaves correctly.
 
