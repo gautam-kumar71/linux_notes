@@ -83,3 +83,228 @@ System.out.println(list.get(0)); // valid
 2️⃣ Capacity = 20  
 3️⃣ You add the 21st element
 👉 **ArrayList automatically grows**
+
+---
+## 1️⃣ `Serializable`
+
+**What it means:**
+
+> Objects of this class **can be converted into a byte stream** and saved/transmitted.
+
+**Why needed:**
+
+- Save object to file
+    
+- Send object over network
+    
+- Store object in DB / cache
+    
+
+**Example use-cases:**
+
+- Session objects
+    
+- RMI
+    
+- File storage
+    
+```java
+
+class Student implements Serializable {
+
+    int id;
+
+    String name;
+
+}
+```
+
+⚠️ If a class **does NOT implement Serializable** → `NotSerializableException`
+
+---
+
+## 2️⃣ `Cloneable`
+
+**What it means:**
+
+> Objects of this class **can be cloned (copied)** using `clone()`.
+
+**Important:**
+
+- `clone()` method is in `Object` class
+    
+- But JVM checks **Cloneable marker** before allowing cloning
+    
+```java
+
+class Employee implements Cloneable {
+
+    protected Object clone() throws CloneNotSupportedException {
+
+        return super.clone();
+
+    }
+
+}
+```
+
+⚠️ If Cloneable not implemented → `CloneNotSupportedException`
+
+🧠 Default cloning = **shallow copy**
+
+---
+
+## 3️⃣ `RandomAccess`
+
+**What it means:**
+
+> Collection supports **fast (O(1)) index-based access**
+
+Used mainly for **Lists**
+
+**Examples:**
+
+- ✅ `ArrayList` → implements RandomAccess
+    
+- ❌ `LinkedList` → does NOT
+
+#note 
+### Then who implements `Serializable`?
+
+👉 ** Some Concrete collection classes**
+
+Examples:
+
+ArrayList     implements List, Serializable
+
+LinkedList    implements List, Deque, Serializable
+
+HashSet       implements Set, Serializable
+
+HashMap       implements Map, Serializable
+
+✔️ **Classes implement `Serializable`, not the `Collection` interface**
+
+> ✅ **Some concrete collection classes implement `Cloneable`**
+
+>` Treemap and Treeset don't implement cloneable`
+
+#note 
+
+### They do not implement serializable as well as collections
+##### 🔹 **Wrapper collections (from `Collections` utility class)**
+##### 🔹 **Concurrent collections (important)**
+---
+### 🔹 Program
+
+- A **static thing**
+    
+- Just code stored on disk
+    
+- Example: `MyApp.java`, `MyApp.class`
+    
+
+> 🧠 A program is **not running**
+
+
+
+### 🔹 Process
+
+- A **running instance of a program**
+    
+- Has:
+    
+    - memory
+        
+    - heap
+        
+    - stack
+        
+    - OS resources
+        
+
+Example:
+
+- Double-click Chrome → one **process**
+    
+
+
+
+### 🔹 Thread
+
+- A **path of execution inside a process**
+    
+- Multiple threads can exist in one process
+    
+
+Example:
+
+- One app → UI thread + background thread
+    
+
+An **execution path** means:
+
+- **where execution starts**
+    
+- **which instruction runs next**
+    
+- **in what order instructions are executed**
+    
+
+Process (Java Application)
+│
+├── Thread-1 → executing method A → method B
+│
+├── Thread-2 → executing method X → method Y
+│
+└── Thread-3 → waiting / sleeping
+
+In short:
+
+> It’s the **flow of control** through the code.
+
+Each thread has its own:
+
+- **program counter** (which line to execute next)
+    
+- **call stack** (method calls)
+    
+- **local variables**
+    
+
+But threads **share**:
+
+- heap memory
+    
+- objects
+    
+- static variables
+
+### 📌 One-line summary ⭐
+
+> **Program = code**  
+> **Process = running program**  
+> **Thread = execution path inside process**
+
+---
+
+
+## What synchronization guarantees (VERY IMPORTANT)
+
+Synchronization gives **two guarantees**:
+
+### ✅ 1. Mutual Exclusion
+
+Only one thread executes critical section at a time
+All other threads must **wait**
+### ✅ 2. Memory Visibility
+
+Changes made by one thread are **visible** to others
+
+Without sync:
+
+- threads may see **stale values**
+
+
+
+
