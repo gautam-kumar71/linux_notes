@@ -188,6 +188,7 @@ HashMap       implements Map, Serializable
 > ✅ **Some concrete collection classes implement `Cloneable`**
 
 >` Treemap and Treeset don't implement cloneable`
+> **TreeSet and TreeMap do not implement Cloneable because their correctness depends on ordering and comparator logic. Providing a shallow clone could lead to subtle bugs, performance issues, or incorrect assumptions about internal tree structure, so Java designers intentionally avoided it.**
 
 #note 
 
