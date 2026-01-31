@@ -1484,4 +1484,229 @@ methodOne is executed
 
 ![[Pasted image 20260131201410.png]]
 
+#vvi
+ Here, import pack1.B; is missing without that it will say that cannot find symbol B.
+ And here, import pack1.B cannot be used because
+
+ `A default (package-private) class cannot be imported into another package because it is accessible only within its own package.`
+ 
+---
+![[Pasted image 20260131204227.png]]                    
+
+`Private<default<protected<public`
+`Recommended modifier for variables is private where as recommended modifier for `
+`methods is public`
+
+---
+
+### **Final Variables – Final Instance Variables
+
+#### 1. Instance Variables
+
+- If the value of a variable changes from object to object, it is called an **instance variable**.
+    
+- For every object, a **separate copy** of instance variables is created.
+    
+- JVM provides **default values** for instance variables if they are not initialized.
+    
+
+**Example:**
+
+```java
+class Test {
+    int i;
+
+    public static void main(String args[]) {
+        Test t = new Test();
+        System.out.println(t.i);
+    }
+}
+```
+
+**Correct Output:**
+
+```
+0
+```
+
+---
+
+#### 2. Final Instance Variables
+
+- If an instance variable is declared as `final`, it **must be initialized explicitly**.
+    
+- JVM **will not provide default values** for final instance variables.
+    
+- If not initialized, it gives a **compile-time error**, whether we use it or not.
+    
+
+---
+
+#### 3. Without `final` (No Error)
+
+**Program:**
+
+```java
+class Test {
+    int i;
+}
+```
+
+**Correct Output:**
+
+```
+Compiled successfully (No error)
+```
+
+---
+
+#### 4. With `final` (Without Initialization – Error)
+
+**Program:**
+
+```java
+class Test {
+    final int i;
+}
+```
+
+**Correct Output:**
+
+```
+Compile-time error:
+variable i might not have been initialized
+```
+
+---
+
+#### 5. Rule for Final Instance Variables
+
+- Final instance variables must be initialized **before constructor completion**.
+    
+- They can be initialized only in the following places:
+    
+
+---
+
+### 6. Places Where Initialization is Allowed
+
+---
+
+#### (1) At the Time of Declaration
+
+**Example:**
+
+```java
+class Test {
+    final int i = 10;
+}
+```
+
+**Correct Output:**
+
+```
+Compiled successfully (No error)
+```
+
+---
+
+#### (2) Inside Instance Block
+
+**Example:**
+
+```java
+class Test {
+    final int i;
+
+    {
+        i = 10;
+    }
+}
+```
+
+**Correct Output:**
+
+```
+Compiled successfully (No error)
+```
+
+---
+
+#### (3) Inside Constructor
+
+**Example:**
+
+```java
+class Test {
+    final int i;
+
+    Test() {
+        i = 10;
+    }
+}
+```
+
+**Correct Output:**
+
+```
+Compiled successfully (No error)
+```
+
+---
+
+### 7. Initialization in Other Places (Not Allowed)
+
+If we try to initialize a final instance variable anywhere else, we get a compile-time error.
+
+---
+
+#### Example (Inside Method – Error)
+
+```java
+class Test {
+    final int i;
+
+    public void methodOne() {
+        i = 10;
+    }
+}
+```
+
+**Correct Output:**
+
+```
+Compile-time error:
+cannot assign a value to final variable i
+```
+
+---
+
+### 8. Important Points
+
+- Instance variables get default values from JVM.
+    
+- Final instance variables do **not** get default values.
+    
+- Final instance variables must be initialized:
+    
+    - At declaration, or
+        
+    - In instance block, or
+        
+    - In constructor.
+        
+- Initialization inside methods is **not allowed**.
+    
+- Once initialized, final variables **cannot be changed**.
+    
+
+#vvi 
+```java
+class Test {
+    final int i;
+
+    i = 10;   // ❌ Invalid: cannot write statements directly in class body
+}
+```
+
 ---
