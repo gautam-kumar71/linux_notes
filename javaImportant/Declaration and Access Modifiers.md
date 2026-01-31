@@ -1710,3 +1710,386 @@ class Test {
 ```
 
 ---
+
+### **Final Static Variables 
+
+---
+
+### 1. Static Variables
+
+- If the value of a variable does **not change from object to object**, it is **not recommended** to declare it as an instance variable.
+    
+- Such variables should be declared at **class level** using the `static` keyword.
+    
+- For instance variables: each object gets a **separate copy**.
+    
+- For static variables: only **one copy** is created at class level and **shared** by all objects.
+    
+
+---
+
+### 2. Default Values for Static Variables
+
+- Static variables get **default values** from JVM.
+    
+- No need to initialize them explicitly.
+    
+
+**Example:**
+
+```java
+class Test {
+    static int i;
+
+    public static void main(String args[]) {
+        System.out.println("value of i is :" + i);
+    }
+}
+```
+
+**Output:**
+
+```
+Value of i is: 0
+```
+
+---
+
+### 3. Final Static Variables
+
+- If a static variable is declared as `final`, it **must be initialized explicitly**.
+    
+- JVM **will not provide default values**.
+    
+- If not initialized, it causes a **compile-time error**, whether used or not.
+    
+
+---
+
+### 4. Rule for Final Static Variables
+
+- Final static variables must be initialized **before class loading is completed**.
+    
+- Otherwise, a compile-time error occurs.
+    
+- They can be initialized only in the following places:
+    
+
+---
+
+### 5. Places Where Initialization is Allowed
+
+---
+
+#### (1) At the Time of Declaration
+
+**Example:**
+
+```java
+class Test {
+    final static int i = 10;
+}
+```
+
+**Output:**
+
+```
+Compiled successfully (No error)
+```
+
+---
+
+#### (2) Inside Static Block
+
+**Example:**
+
+```java
+class Test {
+    final static int i;
+
+    static {
+        i = 10;
+    }
+}
+```
+
+**Output:**
+
+```
+Compiled successfully (No error)
+```
+
+---
+
+### 6. Initialization in Other Places (Not Allowed)
+
+If we try to initialize a final static variable anywhere else, it gives a compile-time error.
+
+---
+
+#### Example (Inside main Method – Error)
+
+```java
+class Test {
+    final static int i;
+
+    public static void main(String args[]) {
+        i = 10;
+    }
+}
+```
+
+**Output:**
+
+```
+Compile-time error:
+cannot assign a value to final variable i
+```
+
+---
+
+### 7. Important Points
+
+- Static variables are shared by all objects.
+    
+- Only one copy of static variable exists in memory.
+    
+- JVM gives default values to normal static variables.
+    
+- Final static variables do not get default values.
+    
+- Final static variables must be initialized:
+    
+    - At declaration, or
+        
+    - Inside static block.
+        
+- Initialization inside methods is not allowed.
+    
+- Once initialized, final static variables cannot be changed.
+    
+
+
+
+![[Pasted image 20260131223702.png]]
+
+---
+### Final Local Variables 
+
+---
+
+### 1. Local Variables
+
+- Variables declared inside a **method, block, or constructor** are called **local variables**.
+    
+- They are used to meet **temporary requirements** of the programmer.
+    
+- JVM **does not provide default values** for local variables.
+    
+- Local variables must be **initialized explicitly before use**.
+    
+
+---
+
+### 2. Using Local Variable Without Initialization (No Error if Not Used)
+
+**Example:**
+
+```java
+class Test {
+    public static void main(String args[]) {
+        int i;
+        System.out.println("hello");
+    }
+}
+```
+
+**Output:**
+
+```
+hello
+```
+
+---
+
+### 3. Using Local Variable Without Initialization (Error)
+
+**Example:**
+
+```java
+class Test {
+    public static void main(String args[]) {
+        int i;
+        System.out.println(i);
+    }
+}
+```
+
+**Output:**
+
+```
+Compile-time error:
+variable i might not have been initialized
+```
+
+---
+
+### 4. Final Local Variables
+
+- Even if a local variable is declared as `final`, it must be **initialized before use**.
+    
+- JVM will not provide any default value.
+    
+
+---
+
+#### Example:
+
+```java
+class Test {
+    public static void main(String args[]) {
+        final int i;
+        System.out.println("hello");
+    }
+}
+```
+
+**Output:**
+
+```
+hello
+```
+
+---
+
+### 5. Note on Modifiers for Local Variables
+
+- The **only applicable modifier** for local variables is `final`.
+    
+- If we use any other modifier, it gives a **compile-time error**.
+    
+
+---
+
+### 6. Important Points
+
+- Local variables are declared inside methods, blocks, or constructors.
+    
+- They are used for temporary purposes.
+    
+- JVM does not give default values to local variables.
+    
+- Local variables must be initialized before use.
+    
+- Using an uninitialized local variable causes a compile-time error.
+    
+- Final local variables also must be initialized before use.
+    
+- Only `final` is allowed as a modifier for local variables.
+    
+- Other modifiers are not allowed for local variables.
+    
+
+![[Pasted image 20260131224406.png]]
+
+---
+### Formal Parameters 
+
+---
+
+### 1. Formal Parameters
+
+- The parameters of a method are called **formal parameters**.
+    
+- Formal parameters act like **local variables** inside the method.
+    
+- So, it is possible to declare formal parameters as `final`.
+    
+
+---
+
+### 2. Final Formal Parameters
+
+- If formal parameters are declared as `final`, their value **cannot be changed** inside the method.
+    
+
+---
+
+### 3. Default Values and Initialization Rules
+
+- For **instance and static variables**:
+    
+    - JVM provides default values.
+        
+    - If they are declared as `final`, JVM does not provide default values.
+        
+    - They must be initialized explicitly, whether used or not.
+        
+- For **local variables**:
+    
+    - JVM does not provide default values.
+        
+    - They must be initialized before use.
+        
+    - This rule is same for both final and non-final local variables.
+        
+
+---
+
+### 4. Important Points
+
+- Formal parameters behave like local variables.
+    
+- Formal parameters can be declared as `final`.
+    
+- Final formal parameters cannot be modified inside the method.
+    
+- JVM gives default values to instance and static variables.
+    
+- JVM does not give default values to final instance and static variables.
+    
+- JVM does not give default values to local variables.
+    
+- Local variables must always be initialized before use.
+    
+- The initialization rule is same for final and non-final local variables.
+    
+![[Pasted image 20260131224712.png]]
+
+---
+### **Static Modifier (Notes)**
+
+---
+
+### 1. Static Modifier
+
+- `static` is a modifier applicable to:
+    
+    - Methods
+        
+    - Variables
+        
+    - Blocks
+        
+- We **cannot declare a class as static**.
+    
+- **Inner classes** can be declared as `static`.
+    
+
+---
+
+### 2. Static Variables vs Instance Variables
+
+- For **instance variables**:
+    
+    - Every object gets a **separate copy**.
+        
+- For **static variables**:
+    
+    - Only **one copy** is created at class level.
+        
+    - It is **shared by all objects** of that class.
+        
+
+![[Pasted image 20260131225544.png]]
+---
