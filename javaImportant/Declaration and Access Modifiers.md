@@ -2092,4 +2092,460 @@ hello
         
 
 ![[Pasted image 20260131225544.png]]
+
 ---
+### **Accessing Instance and Static Variables (Notes)**
+
+---
+
+### 1. Access Rules
+
+- Instance variables can be accessed **directly only from instance area**.
+    
+- Instance variables **cannot be accessed directly from static area**.
+    
+- Static variables can be accessed **directly from both instance and static areas**.
+    
+
+---
+
+### 2. Declarations
+
+1. `int x = 10;` → Instance variable
+    
+2. `static int x = 10;` → Static variable
+    
+
+```java
+public void methodOne() {
+    System.out.println(x);
+}
+```
+
+→ Instance method
+
+```java
+public static void methodOne() {
+    System.out.println(x);
+}
+```
+
+→ Static method
+
+---
+
+### 3. Which Declarations Are Allowed Together?
+
+---
+
+#### (a) 1 and 3 (Allowed)
+
+**Example:**
+
+```java
+class Test {
+    int x = 10;
+
+    public void methodOne() {
+        System.out.println(x);
+    }
+}
+```
+
+**Output:**
+
+```
+Compiled successfully
+```
+
+---
+
+#### (b) 1 and 4 (Not Allowed)
+
+**Example:**
+
+```java
+class Test {
+    int x = 10;
+
+    public static void methodOne() {
+        System.out.println(x);
+    }
+}
+```
+
+**Output:**
+
+```
+Compile-time error:
+non-static variable x cannot be referenced from a static context
+```
+
+---
+
+#### (c) 2 and 3 (Allowed)
+
+**Example:**
+
+```java
+class Test {
+    static int x = 10;
+
+    public void methodOne() {
+        System.out.println(x);
+    }
+}
+```
+
+**Output:**
+
+```
+Compiled successfully
+```
+
+---
+
+#### (d) 2 and 4 (Allowed)
+
+**Example:**
+
+```java
+class Test {
+    static int x = 10;
+
+    public static void methodOne() {
+        System.out.println(x);
+    }
+}
+```
+
+**Output:**
+
+```
+Compiled successfully
+```
+
+---
+
+#### (e) 1 and 2 (Not Allowed)
+
+**Example:**
+
+```java
+class Test {
+    int x = 10;
+    static int x = 10;
+}
+```
+
+**Output:**
+
+```
+Compile-time error:
+x is already defined in Test
+```
+
+---
+
+#### (f) 3 and 4 (Not Allowed)
+
+**Example:**
+
+```java
+class Test {
+    public void methodOne() {
+        System.out.println(x);
+    }
+
+    public static void methodOne() {
+        System.out.println(x);
+    }
+}
+```
+
+**Output:**
+
+```
+Compile-time error:
+methodOne() is already defined in Test
+```
+
+---
+
+### 4. Static and Abstract Methods
+
+- Static methods must have implementation.
+    
+- Abstract methods do not have implementation.
+    
+- So, `static abstract` combination is **illegal** for methods.
+    
+
+---
+
+### 5. Static Method Overloading
+
+- Overloading is allowed for static methods, including `main` method.
+    
+- JVM always calls:
+    
+    ```java
+    public static void main(String[] args)
+    ```
+    
+- Other overloaded `main` methods are not called automatically.
+    
+- They must be called explicitly like normal methods.
+
+
+
+![[Pasted image 20260131230438.png]]
+![[Pasted image 20260131230547.png]]
+
+### **Case 2: Inheritance and Static Methods (Notes)**
+
+---
+
+### 1. Inheritance and Static Methods
+
+- Inheritance concept is applicable for **static methods**, including `main()` method.
+    
+- When a child class is executed:
+    
+    - If the child class **does not contain** `main()` method,
+        
+    - Then the **parent class main() method** will be executed.
+        
+
+---
+
+### 2. Example
+
+```java
+class Parent {
+    public static void main(String args[]) {
+        System.out.println("parent main() method called");
+    }
+}
+
+class Child extends Parent {
+}
+```
+
+![[Pasted image 20260131230934.png]]
+
+### Example 2:
+
+![[Pasted image 20260131231030.png]]
+
+![[Pasted image 20260131231221.png]]
+
+---
+## 📘 **Native Modifier**
+
+- Native is a modifier applicable **only for methods**, not for variables and classes.
+    
+- Methods implemented in **non-Java languages** are called **native / foreign methods**.
+    
+
+### Objectives of `native` Keyword:
+
+- To improve system performance.
+    
+- To use existing legacy non-Java code.
+    
+- To achieve machine-level communication (memory/address level).
+    
+
+### Declaration Rule:
+
+- Native methods already have implementation.
+    
+- So, we **do not provide implementation** in Java.
+    
+- Hence, declaration must end with **semicolon (`;`)**.
+    
+
+**Example:**
+
+- `public native void methodOne();` → ✅ Valid
+    
+- `public native void methodOne()` → ❌ Invalid
+    
+
+### Rules:
+
+- `abstract native` combination is **illegal** because native have already implementation and abstract doesn't have implementation, child class needs to implement abstract methods.
+    
+- `native strictfp` combination is **illegal**.
+    
+- Inheritance, overriding, and overloading are applicable.
+    
+
+### Advantages:
+
+- Performance improves.
+    
+
+### Disadvantages:
+
+- Breaks platform-independent nature of Java.
+    
+
+---
+
+## 📘 **Synchronized Modifier**
+
+1. Applicable for **methods and blocks**, not for variables and classes.
+    
+2. At a time, **only one thread** can execute the synchronized method/block on an object.
+    
+3. Helps to solve **data inconsistency problems**.
+    
+
+### Advantages:
+
+- Resolves data inconsistency.
+    
+
+### Disadvantages:
+
+- Increases waiting time of threads.
+    
+- Affects system performance.
+    
+- Not recommended without specific requirement.
+    
+
+### Rule:
+
+- Synchronized methods must have implementation.
+    
+- Abstract methods do not have implementation.
+    
+- So, `abstract synchronized` combination is **illegal**.
+    
+
+---
+
+## 📘 **Transient Modifier**
+
+1. Applicable **only for variables**, not for methods and classes.
+    
+2. Used when we **do not want to serialize** a variable (for security reasons).
+    
+3. During serialization, JVM saves **default value** for transient variables.
+    
+    - Meaning: _transient = not to serialize_.
+        
+
+### Important Points:
+
+4. Static variables are not part of object state, so serialization does not apply.
+    
+    - Declaring static as transient has **no use**.
+        
+5. Final variables are serialized by their values.
+    
+    - Declaring final as transient has **no impact**.
+        
+
+---
+
+## **4. Volatile Modifier**
+
+### Volatile Keyword
+
+- `volatile` is applicable **only for variables**.
+    
+- Not applicable to classes and methods.
+    
+
+---
+
+### Purpose
+
+- Used when variable value keeps changing.
+    
+- Helps in multithreading environment.
+    
+
+---
+
+### Working
+
+- JVM creates a separate local copy for each thread.
+    
+- All changes are made in local copy.
+    
+- Before thread ends, final value is updated in master copy.
+    
+
+---
+
+### Advantages
+
+- Solves data inconsistency problems.
+    
+
+---
+
+### Disadvantages
+
+- Increases complexity.
+    
+- Reduces performance.
+    
+- Almost outdated.
+    
+- Not recommended if not necessary.
+    
+
+---
+
+### Restriction
+
+- `final` + `volatile` is illegal.
+    
+- Final means constant.
+    
+- Volatile means changing.
+    
+- Both are opposite.
+    
+
+---
+### **Declaration and Implementation of an Interface (Notes)**
+
+---
+
+### 1. Implementing an Interface
+
+- When a class implements an interface, it must **provide implementation for all methods** of that interface.
+    
+- If the class does not implement all methods, then the class must be declared as **abstract**.
+    
+- In that case, the **child class** is responsible for providing implementation for remaining methods.
+    
+
+---
+
+### 2. Access Modifier Rule
+
+- While implementing interface methods, they must be declared as **public**.
+    
+- If they are not declared as `public`, it results in a **compile-time error**.
+    
+
+---
+### Example:  
+interface Interf 
+{ 
+void methodOne(); 
+void methodTwo(); 
+} 
+ 
+
+
+
+
