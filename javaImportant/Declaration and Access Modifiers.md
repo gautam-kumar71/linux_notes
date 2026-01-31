@@ -1156,3 +1156,332 @@ A `final` class means:
 
 But abstract methods mean:
 > “Child must override me.”
+
+
+Here are your **short and simple notes**, using **only the information you provided**, without adding anything extra:
+
+---
+
+## **Member Modifiers**
+
+---
+
+## **Public Members**
+
+### Rule:
+
+- If a member is declared as `public`:  
+    👉 We can access it from anywhere.
+    
+- But the **corresponding class must be visible (public)**.
+    
+- First check **class visibility**, then member visibility.
+    
+
+---
+
+### Example:
+
+#### **Program 1**
+
+```java
+package pack1; 
+
+class A 
+{ 
+    public void methodOne(){ 
+        System.out.println("a class method"); 
+    }
+}
+```
+
+#### Compile:
+
+```
+D:\Java>javac -d . A.java
+```
+
+---
+
+#### **Program 2**
+
+```java
+package pack2; 
+
+import pack1.A; 
+
+class B 
+{ 
+    public static void main(String args[]){ 
+        A a = new A(); 
+        a.methodOne(); 
+    }
+}
+```
+
+---
+
+### Output:
+
+```
+Compile time error.
+
+pack1.A is not public in pack1;  
+cannot be accessed from outside package
+```
+
+---
+
+### Conclusion:
+
+- Even though `methodOne()` is public,
+    
+- We cannot access it because class `A` is not public.
+    
+- Both **class and member must be public**.
+    
+
+---
+
+## **Default Members (Package Level Access)**
+
+### Rule:
+
+- If a member has **no modifier**:  
+    👉 It is default.  
+    👉 It can be accessed only within the **same package**.
+    
+- Hence called **package-level access**.
+    
+
+---
+
+## **Example 1 (Same Package)**
+
+### Program 1
+
+```java
+package pack1; 
+
+class A 
+{ 
+    void methodOne(){ 
+        System.out.println("methodOne is executed"); 
+    }
+}
+```
+
+### Program 2
+
+```java
+package pack1; 
+
+class B 
+{ 
+    public static void main(String args[]){ 
+        A a = new A(); 
+        a.methodOne(); 
+    }
+}
+```
+
+### Output:
+
+```
+methodOne is executed
+```
+
+---
+
+## **Example 2 (Different Package)**
+
+### Program 1
+
+```java
+package pack1; 
+
+class A 
+{ 
+    void methodOne(){ 
+        System.out.println("methodOne is executed"); 
+    }
+}
+```
+
+### Program 2
+
+```java
+package pack2; 
+
+import pack1.A; 
+
+class B 
+{ 
+    public static void main(String args[]){ 
+        A a = new A(); 
+        a.methodOne(); 
+    }
+}
+```
+
+---
+
+### Output:
+
+```
+Compile time error.
+
+pack1.A is not public in pack1;  
+cannot be accessed from outside package
+```
+
+---
+
+## ✅ Java 11 Special Feature (Optional)
+
+In Java 11, you can run **single-file programs** like this:
+
+`java B.java`
+
+👉 Only works when:
+
+- No package
+    
+- Single file
+    
+- Simple program
+    
+
+❌ Not recommended when using packages.
+
+---
+
+## **Private Members**
+
+### Rule:
+
+- If a member is declared as `private`:  
+    👉 It can be accessed **only within the same class**.
+    
+
+---
+
+### Point:
+
+- Private methods are **not visible in child classes** but can be *inherited* and cannot be **accessed**.
+    
+- Abstract methods must be visible to child classes.
+    
+- So, `private` + `abstract` is an **illegal combination** for methods.
+    
+
+---
+
+## **Protected Members**
+
+### Rule:
+
+- If a member is declared as `protected`:  
+    👉 It can be accessed:
+    
+    - Within the **same package (anywhere)**
+        
+    - Outside package **only in child classes** using *child reference * and not parent's reference
+        
+
+### Formula:
+
+```
+Protected = Default + Kids (Child classes)
+```
+
+---
+
+### Access in Same Package:
+
+- We can access protected members:  
+    👉 By parent reference  
+    👉 By child reference
+    
+
+---
+
+### Access in Different Package:
+
+- We can access protected members:  
+    👉 Only in child classes  
+    👉 Only by **child reference**
+    
+- We cannot use **parent reference** outside package.
+    
+
+---
+
+## **Example**
+
+### Program 1
+
+```java
+package pack1; 
+
+public class A 
+{ 
+    protected void methodOne(){ 
+        System.out.println("methodOne is executed"); 
+    }
+}
+```
+
+---
+
+### Program 2
+
+```java
+package pack1; 
+
+class B extends A 
+{ 
+    public static void main(String args[]){ 
+
+        A a = new A(); 
+        a.methodOne(); 
+
+        B b = new B(); 
+        b.methodOne(); 
+
+        A a1 = new B(); 
+        a1.methodOne(); 
+    }
+}
+```
+
+---
+
+### Output:
+
+```
+methodOne is executed  
+methodOne is executed  
+methodOne is executed
+```
+
+---
+
+## **Protected Access (From Image Example)**
+
+- From outside package:  
+    ❌ Using parent reference → Not allowed  
+    ✔️ Using child reference → Allowed
+    
+- So:
+    
+    ```
+    A a = new A();   ❌
+    C c = new C();   ✔️
+    A a1 = new B();  ❌
+    ```
+    
+
+![[Pasted image 20260131201410.png]]
+
+---
