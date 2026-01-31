@@ -68,7 +68,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Declaration and Access Modifiers.md",
+                "file": "javaImportant/Declaration and Access Modifiers.md",
                 "mode": "source",
                 "source": false
               },
@@ -229,8 +229,11 @@
   },
   "active": "bc0afe5cfbfe887d",
   "lastOpenFiles": [
+    "javaImportant/Pasted image 20260131142446.png",
+    "Pasted image 20251012220105.png",
+    "javaImportant/Declaration and Access Modifiers.md",
+    "Pasted image 20260131142523.png",
     "Untitled 2.md",
-    "Declaration and Access Modifiers.md",
     "javaImportant",
     "vague notes.md",
     "Untitled.md",
@@ -264,16 +267,12 @@
     "Untitled 4.md",
     "Computer Vision Unit V.md",
     "Computer Vision Unit IV.md",
-    "Computer Vision Unit III.md",
-    "Pasted image 20251012220105.png",
     "multiPath.png",
     "hybridInheritance.png",
     "hierachicalInheritance.png",
     "inheritence3.webp",
     "Multilevel-inheritence2 1.webp",
     "Multilevel-inheritence2.webp",
-    "diagram1.png",
-    "diagram2.png",
-    "diagram3.png"
+    "diagram1.png"
   ]
 }
