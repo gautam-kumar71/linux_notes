@@ -168,3 +168,363 @@ NoClassDefFoundError: Ashok
 `Error: Could not find or load main class Test`
 
 ---
+---
+---
+
+## **Import Statement**
+
+### Example (Without Import)
+
+```java
+class Test{  
+    public static void main(String args[]){  
+        ArrayList l = new ArrayList();  
+    }  
+}  
+```
+
+### Output:
+
+```
+Compile time error.
+
+D:\Java>javac Test.java  
+Test.java:3: cannot find symbol  
+symbol  : class ArrayList  
+location: class Test  
+
+ArrayList l = new ArrayList();
+```
+
+### Reason:
+
+- `ArrayList` belongs to `java.util` package.
+    
+- Without import, compiler **cannot find** the class.
+    
+
+---
+
+## **Using Fully Qualified Name**
+
+We can write:
+
+```java
+java.util.ArrayList l = new java.util.ArrayList();
+```
+
+### Problem:
+
+- Code becomes **long**.
+    
+- **Readability decreases**.
+    
+
+---
+
+## **Using Import Statement (Recommended Way)**
+
+### Example:
+
+```java
+import java.util.ArrayList;  
+
+class Test{  
+    public static void main(String args[]){  
+        ArrayList l = new ArrayList();  
+    }   
+}
+```
+
+### Output:
+
+```
+D:\Java>javac Test.java
+```
+
+### Advantage:
+
+- No need to use full name.
+    
+- We can use **short class name**.
+    
+- Code becomes **short and readable**.
+    
+
+---
+
+## **Conclusion**
+
+- When we use **import**, no need for full class name.
+    
+- When we use **full class name**, no need for import.
+    
+- Import reduces **code length** and improves **readability**.
+    
+
+---
+
+## **Case 1: Types of Import Statements**
+
+There are **2 types** of import statements:
+
+1. Explicit Class Import
+    
+2. Implicit Class Import
+    
+
+---
+
+## **Explicit Class Import**
+
+### Example:
+
+```java
+import java.util.ArrayList;
+```
+
+### Points:
+
+- Imports **only one class**.
+    
+- Highly recommended.
+    
+- Improves readability.
+    
+- Best for **professional / hi-tech environment**.
+
+
+---
+
+## **Implicit Class Import**
+
+### Example:
+
+```java
+import java.util.*;
+```
+
+### Points:
+
+- Imports **all classes** from the package.
+    
+- It is **not recommended**.
+    
+- Reduces **readability** (we don’t know which class is used).
+    
+- Best suitable where **fast typing is important** (like training centers).
+    
+
+---
+
+## **Case 2: Meaningful Import Statements**
+
+### Question:
+
+Which of the following import statements are meaningful?
+
+![[Pasted image 20260131151623.png]]
+---
+
+## **Case 3: Using Fully Qualified Name**
+
+### Example:
+
+```java
+class MyArrayList extends java.util.ArrayList  
+{  
+}  
+```
+
+### Points:
+
+- Program compiles **without import**.
+    
+- Because full name is used.
+    
+- If we use full name → no import needed.
+    
+- If we use import → no full name needed.
+    
+
+---
+
+## **Case 4: Ambiguity Problem**
+
+### Example:
+
+```java
+import java.util.*;  
+import java.sql.*;  
+
+class Test  
+{  
+    public static void main(String args[])  
+    {  
+        Date d = new Date();  
+    }
+}
+```
+
+### Output:
+
+```
+Compile time error.
+
+reference to Date is ambiguous,  
+both class java.sql.Date in java.sql  
+and class java.util.Date in java.util match
+```
+
+### Reason:
+
+- `Date` class exists in **both packages**.
+    
+- Compiler gets **confused**.
+    
+
+### Note:
+
+- Same problem can happen with `List` (in `util` and `awt`).
+    
+
+---
+
+## **Case 5: Priority While Resolving Class Names**
+
+Compiler checks class names in this order:
+
+1️⃣ Explicit Class Import  
+2️⃣ Current Working Directory  
+3️⃣ Implicit Class Import (`*`)
+
+---
+
+### Example:
+
+```java
+import java.util.Date;  
+import java.sql.*;  
+
+class Test  
+{  
+    public static void main(String args[]){  
+        Date d = new Date();  
+    }
+}
+```
+
+### Result:
+
+- Program compiles successfully.
+    
+- `java.util.Date` is used.
+    
+- Because explicit import has **highest priority**.
+    
+
+---
+
+## **Case 6: Importing Packages**
+
+### Rule:
+
+- When we import a package:  
+    👉 All **classes and interfaces** in that package are available.  
+    👉 **Sub-package classes are NOT available**.
+    
+
+### Example:
+
+```java
+import java.util.*;
+```
+
+- Imports all classes in `java.util`.
+- Does NOT import `java.util.concurrent` (sub-package).
+
+![[Pasted image 20260131150621.png]]
+
+---
+## **Case 7: Default Imported Packages**
+
+### Rule:
+
+In every Java program, these **2 packages are available by default**, so we do NOT need to import them:
+
+1️⃣ `java.lang` package  
+2️⃣ Default package (current working directory)
+
+### Examples of `java.lang`:
+
+- `String`
+    
+- `System`
+    
+- `Math`
+    
+- `Object`
+    
+
+👉 These classes can be used **without import**.
+
+---
+
+## **Case 8: Import Statement – Compile Time Concept**
+
+### Rule:
+
+- Import statements work **only at compile time**.
+    
+- More imports → **More compile time**.
+    
+- Imports do **NOT affect execution time**.
+    
+
+👉 Runtime speed remains the same.
+
+---
+
+## **Class Loading and Import Statement**
+
+### Important Point:
+
+- When we write an import statement:  
+    👉 `.class` file is **NOT loaded immediately**.
+    
+- The `.class` file is loaded:  
+    👉 Only when the class is **actually used** in the program.
+    
+
+### Example:
+
+If we import `ArrayList` but never use it:
+
+- `ArrayList.class` will NOT be loaded.
+    
+
+---
+
+## **Dynamic Loading (Load-on-Demand)**
+
+This behavior is called:
+
+✔️ **Dynamic Loading**  
+✔️ **Load-on-Demand**  
+✔️ **Load-on-Fly**
+
+### Meaning:
+
+- Classes are loaded **only when needed**.
+    
+- Not at import time.
+    
+- Improves performance and memory usage.
+    
+
+---
+#todo 
+Static and normal imports,package
+
+---
+#note :An empty source file is also a valid java program
