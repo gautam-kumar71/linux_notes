@@ -2539,13 +2539,282 @@ class Child extends Parent {
 
 ---
 ### Example:  
+```java
 interface Interf 
 { 
 void methodOne(); 
 void methodTwo(); 
 } 
+```
  
+![[Pasted image 20260201000328.png]]
 
 
 
+### Important Points
 
+- Every concrete class must implement all interface methods.
+    
+- If methods are missing, class must be abstract.
+    
+- Child class must implement remaining methods.
+    
+- If not, compile-time error occurs.
+    
+- Compiler checks interface method implementation strictly.
+
+### **Extends vs Implements (Notes)**
+
+---
+
+## 1. Class Extending a Class
+
+- A class can **extend only one class** at a time.
+    
+
+**Example:**
+
+```java
+class One {
+    public void methodOne() {
+    }
+}
+
+class Two extends One {
+}
+```
+
+---
+
+## 2. Class Implementing Interfaces
+
+- A class can **implement any number of interfaces** at a time.
+    
+
+**Example:**
+
+```java
+interface One {
+    public void methodOne();
+}
+
+interface Two {
+    public void methodTwo();
+}
+
+class Three implements One, Two {
+    public void methodOne() {
+    }
+
+    public void methodTwo() {
+    }
+}
+```
+
+---
+
+## 3. Class Extending a Class and Implementing Interfaces
+
+- A class can **extend one class and implement any number of interfaces** at the same time.
+    
+
+**Example:**
+
+```java
+interface One {
+    void methodOne();
+}
+
+class Two {
+    public void methodTwo() {
+    }
+}
+
+class Three extends Two implements One {
+    public void methodOne() {
+    }
+}
+```
+
+---
+
+## 4. Interface Extending Interfaces
+
+- An interface can **extend any number of interfaces**.
+    
+
+**Example:**
+
+```java
+interface One {
+    void methodOne();
+}
+
+interface Two {
+    void methodTwo();
+}
+
+interface Three extends One, Two {
+}
+```
+
+---
+
+## 5. Multiple Choice Question
+
+**Which of the following is true?**
+
+1. A class can extend any number of classes. ❌
+    
+2. An interface can extend only one interface. ❌
+    
+3. A class can implement only one interface. ❌
+    
+4. A class can extend a class and implement an interface but not both together. ❌
+    
+5. An interface can implement any number of interfaces. ❌
+    
+6. None of the above. ✅
+    
+
+**Answer: 6**
+
+---
+
+## 6. Expression: X extends Y
+
+**Question:** For which possibility of X and Y is this expression true?
+
+Options:
+
+1. Both are classes ❌
+    
+2. Both are interfaces ❌
+    
+3. Both can be classes or interfaces ✅
+    
+4. No restriction ❌
+    
+
+**Answer: 3**
+
+---
+
+## 7. Valid Combinations
+
+### (a) `X extends Y, Z`
+
+- X, Y, Z must be interfaces.
+    
+
+---
+
+### (b) `X extends Y implements Z`
+
+- X, Y must be classes.
+    
+- Z must be an interface.
+    
+
+---
+
+### (c) `X implements Y, Z`
+
+- X must be a class.
+    
+- Y, Z must be interfaces.
+    
+
+---
+
+### (d) `X implements Y extends Z`
+
+- This is **invalid syntax**.
+    
+
+---
+
+## 8. Last Example (Error Case)
+
+### Given Program
+
+```java
+interface One {
+}
+
+class Two {
+}
+
+class Three implements One extends Two {
+}
+```
+
+---
+
+### Output
+
+```
+Compile-time error:
+'{' expected
+```
+
+---
+
+## 9. Simple Explanation of Last Example
+
+In Java:
+
+- `extends` must come **before** `implements`.
+    
+- A class can:
+    
+    - Extend **one class**
+        
+    - Implement **interfaces**
+        
+
+Correct order is:
+
+```
+class ClassName extends ClassName implements InterfaceName
+```
+
+---
+
+### ❌ Wrong Order (Given Example)
+
+```java
+class Three implements One extends Two {
+}
+```
+
+Here:
+
+- `implements` is written first.
+    
+- `extends` is written after it.
+    
+- This order is **not allowed in Java**.
+    
+
+So compiler gets confused and gives error.
+
+---
+
+### ✅ Correct Way
+
+```java
+class Three extends Two implements One {
+}
+```
+
+Now:
+
+- First extends class `Two`
+    
+- Then implements interface `One`
+    
+- This is valid.
+    
+
+---
