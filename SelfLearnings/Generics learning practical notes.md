@@ -248,3 +248,237 @@ class IntegerContainer<N extends Number> implements NumberContainer<N>
 
 ---
 
+Yes ✅ — **exactly.**  
+When you bound the class’s generic type, that bound is automatically applied everywhere you use that type, including in the interface.
+
+Let’s make this very clear.
+
+---
+
+## ✅ Example
+
+```java
+class IntegerContainer<N extends Number>
+        implements NumberContainer<N> {
+```
+
+Here you wrote:
+
+```java
+N extends Number
+```
+
+So Java now knows:
+
+👉 `N` can ONLY be a `Number` or its subclasses.
+
+Like:
+
+- Integer
+    
+- Double
+    
+- Float
+    
+- Long
+    
+
+❌ Not allowed: String, Object, etc.
+
+---
+
+## 🔹 What Happens to the Interface?
+
+Your interface is:
+
+```java
+interface NumberContainer<T extends Number>
+```
+
+It already says:
+
+👉 `T` must be a `Number`.
+
+Now when you write:
+
+```java
+implements NumberContainer<N>
+```
+
+Java checks:
+
+> Is `N` a Number?
+
+Since you wrote:
+
+```java
+N extends Number
+```
+
+✔ Yes → Match  
+✔ No conflict
+
+So:
+
+👉 The class bound satisfies the interface bound automatically.
+
+---
+
+## 🧠 Think of It Like This
+
+When you write:
+
+```java
+class A<N extends Number>
+```
+
+You are telling Java:
+
+> "Everywhere I use N, treat it as a Number."
+
+So:
+
+```java
+private N item;          // is a Number
+add(N item);             // is a Number
+implements X<N>;         // N is Number
+```
+
+Everything is bounded.
+
+---
+
+## ❌ If You Don’t Bound the Class
+
+```java
+class A<N> implements NumberContainer<N>  // ❌
+```
+
+Here:
+
+- `N` = anything
+    
+- But interface wants `extends Number`
+    
+
+So Java says:
+
+❗ "I can't guarantee N is Number."
+
+→ Compile error.
+
+---
+
+## ✅ Why This Works (Chain Rule)
+
+This is called **bound propagation**.
+
+Example:
+
+```java
+class A<N extends Number>
+```
+
+means:
+
+```
+N → Number
+```
+
+Then:
+
+```java
+implements B<N>
+```
+
+means:
+
+```
+B<Number>
+```
+
+So chain becomes:
+
+```
+A<N extends Number> → B<N extends Number>
+```
+
+Automatically ✔
+
+---
+
+## 🔹 Another Example (Multiple Bounds)
+
+```java
+class Test<T extends Number & Runnable>
+```
+
+Now:
+
+- T is a Number
+    
+- T implements Runnable
+    
+
+Everywhere T is used → both apply.
+
+Even in interfaces.
+
+---
+
+## 📌 Real-Life Analogy
+
+Think of `N` like a rule:
+
+```java
+N extends Number = "N must be numeric"
+```
+
+Once you set this rule in the class:
+
+👉 All methods, interfaces, fields must obey it.
+
+No exception.
+
+---
+
+## ✅ Final Answer (Your Question)
+
+> if i bound the class then everything gets bounded including the interface too?
+
+✔ YES.
+
+When you write:
+
+```java
+class X<T extends Something>
+```
+
+Then:
+
+- Methods
+    
+- Fields
+    
+- Interfaces
+    
+- Parent classes
+    
+
+All using `T` are automatically bounded.
+
+---
+
+## ⭐ One-Line Rule to Remember
+
+> Generic bounds are inherited everywhere that type is used.
+
+---
+
+If you want, next I can explain:
+
+👉 Why Java designers did this  
+👉 What happens with nested generics  
+👉 How `<? extends>` is different from `<T extends>`
+
+Just tell me 👍
