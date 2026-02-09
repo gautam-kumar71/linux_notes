@@ -30,9 +30,21 @@
               "icon": "lucide-file",
               "title": "Collections learning practical notes"
             }
+          },
+          {
+            "id": "4416c72b0afd421b",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.7"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -182,7 +194,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e3c85c65f3d1c70f",
+  "active": "4416c72b0afd421b",
   "lastOpenFiles": [
     "Collections learning practical notes.md",
     "SelfLearnings",
