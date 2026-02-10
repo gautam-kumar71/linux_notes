@@ -491,7 +491,9 @@ Great example 👍 You’ve actually covered **three important generic concepts*
 
 Let’s go step by step and cleanly understand what your code is doing.
 
-m1practice
+
+m1practice-->package com.Generics.WildCards;
+Examples program
 ---
 
 ## ✅ 1. `print(ArrayList<?> list)` → **Unbounded Wildcard (Read-Only)**
