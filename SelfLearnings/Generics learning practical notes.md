@@ -942,23 +942,8 @@ Without generic class → impossible.
 
 ---
 
-# 7️⃣ Real-Life Example (Easy to Remember)
 
-### 🧺 Bag Example
-
-#### Generic Method = Borrowed Bag
-
-You take any bag for 1 minute.
-
-#### Generic Class = Your Own Bag
-
-You buy a bag of fixed size.
-
-You always use same bag.
-
----
-
-# 8️⃣ Industry Example
+# 7️⃣ Industry Example
 
 Imagine `ArrayList` without generic class:
 
