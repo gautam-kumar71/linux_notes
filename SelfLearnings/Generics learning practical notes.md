@@ -1079,11 +1079,11 @@ Integer
 
 So possible types are:
 
-|Actual List|
-|---|
-|List|
-|List|
-|List|
+| Actual List |
+| ----------- |
+| List        |
+| List        |
+| List        |
 
 Java doesn’t know which one you passed.
 
@@ -1106,11 +1106,11 @@ Why?
 
 Because:
 
-|If List Is|Can it store Integer?|
-|---|---|
-|List|✅|
-|List|✅ (Integer is a Number)|
-|List|✅ (Integer is an Object)|
+| If List Is | Can it store Integer?    |
+| ---------- | ------------------------ |
+| List       | ✅                        |
+| List       | ✅ (Integer is a Number)  |
+| List       | ✅ (Integer is an Object) |
 
 So writing is safe.
 
@@ -1196,11 +1196,11 @@ Actually, that sentence is **half-wrong**.
 
 Correct version:
 
-|Wildcard|Read|Write|
-|---|---|---|
-|`? extends T`|✅ (as T)|❌|
-|`? super T`|❌ (only Object)|✅|
-|`T` (no wildcard)|✅|✅|
+| Wildcard          | Read            | Write |
+| ----------------- | --------------- | ----- |
+| `? extends T`     | ✅ (as T)        | ❌     |
+| `? super T`       | ❌ (only Object) | ✅     |
+| `T` (no wildcard) | ✅               | ✅     |
 
 So:
 
@@ -1292,3 +1292,123 @@ Because list is guaranteed to accept `Integer`.
 Because element might not be `Integer`.
 
 ---
+#Question so in reading only Object can be used while iterating right in case of lower bound
+
+Yes ✅ — **exactly right.**
+
+For a **lower bounded wildcard**:
+
+```java
+List<? super Integer>
+```
+
+👉 **When reading (getting elements), you can only safely use `Object`.**
+
+---
+
+## 🔹 Why Only `Object`?
+
+Because `? super Integer` can be:
+
+```java
+List<Integer>
+List<Number>
+List<Object>
+```
+
+Java does **not know which one it is**.
+
+So elements inside could be:
+
+- Integer
+    
+- Double
+    
+- String
+    
+- Any Object
+    
+
+Example:
+
+```java
+List<Object> list = new ArrayList<>();
+list.add("Hi");
+list.add(3.14);
+
+addSomething(list); // valid
+```
+
+Now inside your method:
+
+```java
+List<? super Integer>
+```
+
+The list contains:
+
+```
+"Hi", 3.14, 9, 10
+```
+
+So Java says:
+
+> "I can only guarantee these are Objects."
+
+---
+
+## 🔹 What Happens If You Try Integer?
+
+❌ This is NOT allowed:
+
+```java
+for (Integer x : list) {   // Compile-time error
+}
+```
+
+or
+
+```java
+Integer x = list.get(0);   // Error
+```
+
+Because element may not be Integer.
+
+---
+
+## 🔹 Correct Way (Your Code Is Right ✅)
+
+```java
+for (Object x : list) {
+    System.out.println(x);
+}
+```
+
+This is the **only safe way**.
+
+---
+
+## 🔹 Quick Comparison Table
+
+|Wildcard|Can Read As|Can Add|
+|---|---|---|
+|`? extends T`|`T`|❌|
+|`? super T`|`Object`|✅ T|
+|`T` (no wildcard)|`T`|✅|
+
+---
+
+## 🔹 Simple Rule to Remember (Exam / Interview)
+
+> **Lower bound (`super`) → Write safe, Read as Object only**
+
+---
+
+## 🧠 One-Line Answer for You
+
+Yes ✅,  
+In `List<? super Integer>`, while iterating, **you can only read elements as `Object`**, not as `Integer`.
+
+---
+
+If you want, next I can explain why **`extends` is opposite** with a similar example — that will complete your generics understanding 💪
