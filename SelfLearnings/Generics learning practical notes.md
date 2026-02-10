@@ -679,11 +679,11 @@ Explanation:
 
 ## 🔥 Comparison Table (Easy View)
 
-|Method|Uses|Type Safe?|Return Type|Best Use|
-|---|---|---|---|---|
-|`print`|`?`|❌ No|`Object`|Read-only lists|
-|`print2`|`?`|❌ No|`Object`|Avoid if possible|
-|`print3`|`<T>`|✅ Yes|`T`|Best practice|
+| Method   | Uses  | Type Safe? | Return Type | Best Use          |
+| -------- | ----- | ---------- | ----------- | ----------------- |
+| `print`  | `?`   | ❌ No       | `Object`    | Read-only lists   |
+| `print2` | `?`   | ❌ No       | `Object`    | Avoid if possible |
+| `print3` | `<T>` | ✅ Yes      | `T`         | Best practice     |
 
 ---
 
@@ -739,11 +739,11 @@ So you always get type safety.
 
 ## ✅ Final Understanding (In Simple Words)
 
-|Syntax|Meaning|
-|---|---|
-|`<?>`|"I don’t know the type"|
-|`<T>`|"I will preserve the type"|
-|`Object`|"Type info is lost"|
+| Syntax   | Meaning                    |
+| -------- | -------------------------- |
+| `<?>`    | "I don’t know the type"    |
+| `<T>`    | "I will preserve the type" |
+| `Object` | "Type info is lost"        |
 
 ---
 
