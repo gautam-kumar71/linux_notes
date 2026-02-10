@@ -881,6 +881,18 @@ String s = b.get(); // 😱 Crash
 
 No compile error → Runtime error.
 
+###  You ask for String
+
+`String s = b.get();`
+
+Compiler thinks:
+
+`T = String`
+
+So it trusts you 😐
+
+
+
 ---
 
 # 4️⃣ Generic Class = Compile-Time Safety (Biggest Benefit)
