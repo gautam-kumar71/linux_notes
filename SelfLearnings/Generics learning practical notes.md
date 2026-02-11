@@ -1412,3 +1412,356 @@ In `List<? super Integer>`, while iterating, **you can only read elements as `Ob
 ---
 
 If you want, next I can explain why **`extends` is opposite** with a similar example — that will complete your generics understanding 💪
+
+
+
+Function important:obsnotes
+
+---
+
+# ✅ Short Answer First
+
+> **Yes.**  
+> Because `Function` is raw, its method becomes:
+
+```java
+Object apply(Object x)
+```
+
+So:
+
+- When you **pass Integer** → it is **upcast to Object**
+    
+- When you **return Integer** → it is **returned as Object reference**
+    
+
+This is **normal Java polymorphism + upcasting**.
+
+---
+
+# 🔹 1️⃣ What Really Happens to `apply()` (Behind the Scenes)
+
+When you write:
+
+### With Generics
+
+```java
+Function<Integer, Integer>
+```
+
+Method is:
+
+```java
+Integer apply(Integer x);
+```
+
+---
+
+### With Raw Type
+
+```java
+Function
+```
+
+After type erasure, Java sees:
+
+```java
+Object apply(Object x);
+```
+
+So compiler works with this version.
+
+---
+
+# 🔹 2️⃣ Passing Integer → Why It Becomes Object?
+
+You do:
+
+```java
+letSee2.apply(10);
+```
+
+Step-by-step:
+
+### Step 1: Auto-boxing
+
+```
+10 → Integer(10)
+```
+
+Because generics work with objects.
+
+---
+
+### Step 2: Upcasting (Child → Parent)
+
+```java
+Integer → Object
+```
+
+This is automatic in Java:
+
+```java
+Object o = new Integer(10); // valid
+```
+
+So:
+
+```
+Integer(10) is passed as Object
+```
+
+Because method expects Object.
+
+---
+
+# 🔹 3️⃣ Inside Lambda: Downcasting
+
+Inside lambda:
+
+```java
+(Integer) x
+```
+
+You are doing:
+
+```
+Object → Integer
+```
+
+This is **downcasting**.
+
+Java allows it, but checks at runtime.
+
+If wrong → crash.
+
+---
+
+# 🔹 4️⃣ Returning int → Why It Becomes Object?
+
+Inside lambda:
+
+```java
+(Integer)x * 4
+```
+
+This gives:
+
+```
+int → Integer (auto-boxing)
+```
+
+So internally:
+
+```
+Integer(40)
+```
+
+---
+
+But…
+
+`apply()` signature is:
+
+```java
+Object apply(Object x)
+```
+
+So Java does:
+
+```
+Integer → Object
+```
+
+Upcast again.
+
+Returned as Object reference.
+
+---
+
+# 🔹 5️⃣ Your Statement (Which Is Correct ✅)
+
+You said:
+
+> when we pass child object to parent object , parent object type it becomes and when we return a child object and return type is parent object it returns parent ref
+
+YES. Exactly. 💯
+
+This is called:
+
+👉 **Upcasting**
+
+Example:
+
+```java
+class A {}
+class B extends A {}
+
+A obj = new B(); // upcasting
+```
+
+Same thing here:
+
+```
+Integer extends Number extends Object
+```
+
+So:
+
+```java
+Object o = new Integer(5);
+```
+
+---
+
+# 🔹 6️⃣ Important: Object REF ≠ Object VALUE
+
+Very important concept:
+
+When you do:
+
+```java
+Object o = new Integer(40);
+```
+
+This means:
+
+```
+Reference type = Object
+Actual object  = Integer
+```
+
+Memory:
+
+```
+o  ----->  Integer(40)
+```
+
+So:
+
+- Compile-time → Object
+    
+- Runtime → Integer
+    
+
+This is why you can later cast:
+
+```java
+Integer i = (Integer) o; // works
+```
+
+---
+
+# 🔹 7️⃣ Why Generics Avoid This Mess
+
+When you write:
+
+```java
+Function<Integer,Integer>
+```
+
+Compiler keeps:
+
+```java
+Integer apply(Integer x);
+```
+
+So:
+
+❌ No upcasting  
+❌ No downcasting  
+❌ No Object  
+✅ Type-safe
+
+---
+
+# 🔹 8️⃣ Real-Life Analogy 🧠
+
+Think like this:
+
+### Parent = Vehicle
+
+### Child = Car
+
+```java
+Vehicle v = new Car();
+```
+
+Now:
+
+- You still have a Car
+    
+- But you are viewing it as Vehicle
+    
+
+Same here:
+
+```java
+Object o = new Integer(10);
+```
+
+Integer is still there.  
+You’re just viewing it as Object.
+
+---
+
+# 🔹 9️⃣ So Why Java Designed It Like This?
+
+Because of:
+
+### 🔸 Backward Compatibility
+
+Before Java 5:
+
+```java
+Function f;
+```
+
+All generics didn’t exist.
+
+Everything was Object.
+
+So Java still supports it.
+
+---
+
+# ✅ Final Mental Model (Keep This Forever)
+
+When generics are removed:
+
+```
+T → Object
+R → Object
+```
+
+So:
+
+```
+apply(T) → R
+becomes
+apply(Object) → Object
+```
+
+And Java uses:
+
+✔ Upcasting when passing  
+✔ Upcasting when returning  
+✔ Manual downcasting inside
+
+---
+
+# ✅ Final Answer in One Line
+
+Yes:
+
+> When you use raw types, Java automatically upcasts child objects (Integer) to parent (Object) when passing and returning, because method signature becomes `Object apply(Object)`.
+
+---
+
+If you want, next I can explain:
+
+👉 How JVM sees this in bytecode  
+👉 Why C++ templates don’t have this issue  
+👉 Why Java chose type erasure
+
+Just tell me 😄
