@@ -1,6 +1,6 @@
 What Is JDBC and JDBC
 
-Drivers
+# Drivers
 JDBC (Java Database Connectivity) is a Java API for connecting and
 with databases. JDBC drivers are software components that
 provide the necessary functionality to connect Java applications to
@@ -13,3 +13,14 @@ There are four types of JDBC drivers:
 Java Driver)---->latest driver,directly connects native api calls to database calls,lightweight,efficient
 Each type Of driver has its own advantages and is suitable for different
 scenarios.
+
+
+# JDBC Components
+In addition to the JDBC drivers, there are several other components that
+make up the JDBC API, including:
+Class
+• Connection interface
+Statement and PreparedStatement interfaces
+• ResultSet interface
+These components work together to provide a powerful and flexible API
+for working with databases in Java.
