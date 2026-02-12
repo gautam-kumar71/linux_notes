@@ -24,3 +24,8 @@ Statement and PreparedStatement interfaces
 • ResultSet interface
 These components work together to provide a powerful and flexible API
 for working with databases in Java.
+
+
+# Program Flow
+
+![[Pasted image 20260212125809.png]]
